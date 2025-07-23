@@ -13,6 +13,17 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+        publicKey: "fZork7537wneqtdF2",
+      });
+      })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
@@ -145,18 +156,18 @@
             <h4 class="modal__sub-title modal__sub-title--contact">
                 I'm currently open to new oppertunities.
             </h4>
-            <form class="contact__form" action="">
+            <form class="contact__form" onsubmit="contact(event)">
                 <div class="form__item">
                     <label class="form__item--label" >Name</label>
-                    <input class="input" name="user_name" type="text" required></input>
+                    <input class="input" name="user_name" type="text" ></input>
                 </div>
                 <div class="form__item">
                     <label class="form__item--label" >Email</label>
-                    <input class="input" name="user_email" type="email" required></input>
+                    <input class="input" name="user_email" type="email" ></input>
                 </div>
                 <div class="form__item">
                     <label class="form__item--label" >Message</label>
-                    <textarea class="input" name="message" type="text" required></textarea>
+                    <textarea class="input" name="message" type="text" ></textarea>
                 </div>
                 <button id="contact__submit" class="form__submit">
                     Send it my way!
