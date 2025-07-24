@@ -9,15 +9,16 @@ let contrastToggle = false;
 const scaleFactor = 1/20
 
 function moveBackground(event) {
-    const shapes = document.querySelectorAll(".shape");
-    const x = event.clientX * scaleFactor;
+    const shapes = document.querySelectorAll(".shape"); //Every class with 'shape' is in an array
+    const x = event.clientX * scaleFactor; //event parameter we're getting
     const y = event.clientY * scaleFactor;
     //recalculates position of shape every time you move mous
 
+    //loop over all the shapes in the array
     for (let i = 0; i <shapes.length; ++i) {
         const isOdd = i%2 !==0;
         const boolInt = isOdd ? -1 : 1;
-        shapes[i].style.transform = `translate(${x * oddInteger}px, ${y*oddInteger}px)`
+        shapes[i].style.transform = `translate(${x * boolInt}px, ${y*boolInt}px)` //target shape, in style property there is transform property 
     }
 
 }
