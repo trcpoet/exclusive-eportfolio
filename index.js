@@ -4,6 +4,36 @@
 
 
 
+let isModalOpen = false;
+let contrastToggle = false;
+const scaleFactor = 1/20
+
+function moveBackground(event) {
+    const shapes = document.querySelectorAll(".shape");
+    const x = event.clientX * scaleFactor;
+    const y = event.clientY * scaleFactor;
+    //recalculates position of shape every time you move mous
+
+    for (let i = 0; i <shapes.length; ++i) {
+        const isOdd = i%2 !==0;
+        const boolInt = isOdd ? -1 : 1;
+        shapes[i].style.transform = `translate(${x * oddInteger}px, ${y*oddInteger}px)`
+    }
+
+}
+
+
+//toggles a class called dark-theme to the body
+function toggleContrast() {
+    contrastToggle = !contrastToggle
+    if (contrastToggle) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+}
+
 // Async await function Promise to verify email js through IDs
 function contact(event) {
     event.preventDefault(); //This line prevents the default action of the form submission, which would normally refresh the page. Instead, we want to handle the submission with JavaScript.
@@ -27,3 +57,16 @@ function contact(event) {
             );
         })
 }
+//Code to create toggling Modal to open and close it
+function toggleModal() {
+    if (isModalOpen) {
+        isModalOpen = false;
+        return document.body.classList.remove("modal--open")
+    }
+    //toggle modal
+
+    isModalOpen = true;
+    document.body.classList += " modal--open";
+}
+
+
