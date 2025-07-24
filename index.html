@@ -190,6 +190,7 @@
             <figure class="modal__language">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg"
+                class="modal__language--img"
                 alt="Swift Logo"
               />
               <span class="language__name">SWIFT</span>
@@ -207,15 +208,15 @@
           <form class="contact__form" onsubmit="contact(event)">
             <div class="form__item">
               <label class="form__item--label">Name</label>
-              <input class="input" name="user_name" type="text" />
+              <input class="input" name="user_name" type="text" required />
             </div>
             <div class="form__item">
               <label class="form__item--label">Email</label>
-              <input class="input" name="user_email" type="email" />
+              <input class="input" name="user_email" type="email" required />
             </div>
             <div class="form__item">
               <label class="form__item--label">Message</label>
-              <textarea class="input" name="message" type="text"></textarea>
+              <textarea class="input" name="message" type="text" required></textarea>
             </div>
             <button id="contact__submit" class="form__submit">
               Send it my way!
@@ -331,13 +332,13 @@
           </figure>
           <div class="footer__social--list">
             <a
-              href="#https://github.com/trcpoet" target="_blank"
+              href="https://github.com/trcpoet" target="_blank"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Github
             </a>
             <a
-              href="#https://www.linkedin.com/in/trcpoet/" target="_blank"
+              href="https://www.linkedin.com/in/trcpoet/" target="_blank"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               LinkedIn
