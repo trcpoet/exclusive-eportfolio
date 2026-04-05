@@ -110,10 +110,15 @@ input:focus, textarea:focus {
     margin-bottom: 12px;
     text-align: left;
     line-height: 1;
+    color: var(--text-dark);
 }
 
-.var(--maroon) {
+.maroon {
     color: var(--maroon) !important;
+}
+
+body.dark-theme {
+    --text-dark: var(--text-light);
 }
 
 .link__hover-effect {
