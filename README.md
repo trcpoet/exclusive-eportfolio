@@ -1,6 +1,6 @@
 # Hi there, I'm Tahsin! 👋
 
-I'm a **Frontend Software Engineer** passionate about building beautiful, functional, and user-centric web applications. I love learning new technologies and solving challenging engineering problems.
+I'm a **Full Stack Developer** passionate about building beautiful, functional, and user-centric web applications. I love learning new technologies and solving challenging engineering problems.
 
 ## 🚀 About Me
 
