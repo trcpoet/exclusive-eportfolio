@@ -13,20 +13,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
-    <script src="index.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-    <script type="text/javascript">
-      (function () {
-        emailjs.init({
-          publicKey: "fZork7537wneqtdF2",
-        });
-      })();
-    </script>
   </head>
   <body>
+    <div id="preloader">
+      <div class="preloader__content">
+        <h1 class="preloader__logo">TRC</h1>
+        <div class="preloader__line"></div>
+      </div>
+    </div>
+    <div id="grain" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
     <section id="landing-page" onmousemove="moveBackground(event)">
       <nav>
         <div class="logo">TRC</div>
@@ -242,14 +240,39 @@
       <img src="./assets/semi circle.svg" class="shape shape--8" alt="" />
     </section>
 
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>React</span><span>★</span>
+          <span>Next.js</span><span>★</span>
+          <span>TypeScript</span><span>★</span>
+          <span>Node.js</span><span>★</span>
+          <span>Python</span><span>★</span>
+          <span>Tailwind CSS</span><span>★</span>
+          <span>Supabase</span><span>★</span>
+          <span>Three.js</span><span>★</span>
+          <span>Firebase</span><span>★</span>
+          <span>React</span><span>★</span>
+          <span>Next.js</span><span>★</span>
+          <span>TypeScript</span><span>★</span>
+          <span>Node.js</span><span>★</span>
+          <span>Python</span><span>★</span>
+          <span>Tailwind CSS</span><span>★</span>
+          <span>Supabase</span><span>★</span>
+          <span>Three.js</span><span>★</span>
+          <span>Firebase</span><span>★</span>
+        </div>
+      </div>
+    </div>
+
     <section id="projects">
       <div class="container">
         <div class="row">
-          <h1 class="section__title">
+          <h1 class="section__title reveal">
             Here are some of my <span class="maroon">projects</span>
           </h1>
           <ul class="projects__list">
-            <li class="project">
+            <li class="project reveal reveal--delay-1">
               <div class="project__wrapper">
                 <img
                   src="./assets/fun-screenshot.png"
@@ -287,7 +310,7 @@
               </div>
             </li>
 
-            <li class="project">
+            <li class="project reveal reveal--delay-2">
               <div class="project__wrapper">
                 <img
                   src="./assets/skinstric.png"
@@ -326,7 +349,7 @@
               </div>
             </li>
 
-            <li class="project">
+            <li class="project reveal reveal--delay-3">
               <div class="project__wrapper">
                 <img
                   src="./assets/NikeClone.png"
@@ -365,7 +388,7 @@
               </div>
             </li>
 
-            <li class="project">
+            <li class="project reveal reveal--delay-1">
               <div class="project__wrapper">
                 <img
                   src="./assets/Summarist.png"
@@ -403,7 +426,7 @@
               </div>
             </li>
 
-            <li class="project">
+            <li class="project reveal reveal--delay-2">
               <div class="project__wrapper">
                 <img
                   src="./assets/awwwards.png"
@@ -441,7 +464,7 @@
               </div>
             </li>
 
-            <li class="project">
+            <li class="project reveal reveal--delay-3">
               <div class="project__wrapper">
                 <img
                   src="./assets/reactMovie.png"
@@ -519,5 +542,16 @@
         </div>
       </div>
     </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "fZork7537wneqtdF2",
+        });
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

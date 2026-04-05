@@ -1,73 +1,249 @@
+// Template IDs for EmailJS
 // template_ux16esc - Template ID
 // service_frm9cdp - Service ID
 // fZork7537wneqtdF2 - Public Key
 
-
-
 let isModalOpen = false;
 let contrastToggle = false;
-const scaleFactor = 1/20
+const scaleFactor = 1/20;
 
+// ===== PARALLAX BACKGROUND =====
 function moveBackground(event) {
-    const shapes = document.querySelectorAll(".shape"); //Every class with 'shape' is in an array
-    const x = event.clientX * scaleFactor; //event parameter we're getting
+    const shapes = document.querySelectorAll(".shape");
+    const x = event.clientX * scaleFactor;
     const y = event.clientY * scaleFactor;
-    //recalculates position of shape every time you move mous
 
-    //loop over all the shapes in the array
-    for (let i = 0; i <shapes.length; ++i) {
-        const isOdd = i%2 !==0;
+    for (let i = 0; i < shapes.length; ++i) {
+        const isOdd = i % 2 !== 0;
         const boolInt = isOdd ? -1 : 1;
-        shapes[i].style.transform = `translate(${x * boolInt}px, ${y*boolInt}px)` //target shape, in style property there is transform property 
+        shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`;
     }
-
 }
 
-
-//toggles a class called dark-theme to the body
+// ===== DARK THEME TOGGLE =====
 function toggleContrast() {
-    contrastToggle = !contrastToggle
+    contrastToggle = !contrastToggle;
     if (contrastToggle) {
-        document.body.classList += " dark-theme"
-    }
-    else {
-        document.body.classList.remove("dark-theme")
+        document.body.classList.add("dark-theme");
+    } else {
+        document.body.classList.remove("dark-theme");
     }
 }
 
-// Async await function Promise to verify email js through IDs
+// ===== CONTACT FORM =====
 function contact(event) {
-    event.preventDefault(); //This line prevents the default action of the form submission, which would normally refresh the page. Instead, we want to handle the submission with JavaScript.
-    const loading = document.querySelector('.modal__overlay--loading'); //This selects an HTML element with the class modal__overlay--loading
-    const success = document.querySelector('.modal__overlay--success'); //This selects another element that will show a success message once the email is sent.
-    loading.classList += " modal__overlay--visible"; //This adds a class to the loading element to make it visible on the screen, indicating to the user that the form is being processed.
+    event.preventDefault();
+    const loading = document.querySelector('.modal__overlay--loading');
+    const success = document.querySelector('.modal__overlay--success');
+    loading.classList.add("modal__overlay--visible");
 
-    emailjs //This is a call to the EmailJS service, which allows you to send emails directly from your JavaScript code. The parameters include:
+    emailjs
         .sendForm(
-            'service_frm9cdp', //The ID of the email service you are using.
-            'template_ux16esc', //The ID of the email template you want to use.
-            event.target, //This refers to the form that was submitted.
-            'fZork7537wneqtdF2' //This is the user ID or API key for authentication.
-        ).then(() => { //.then(() => { ... }): This block runs if the email is sent successfully. It removes the loading indicator and shows the success message.
-            loading.classList.remove("modal__overlay--visible"); //This hides the loading spinner.
-            success.classList += " modal__overlay--visible"; //This makes the success message visible.
+            'service_frm9cdp',
+            'template_ux16esc',
+            event.target,
+            'fZork7537wneqtdF2'
+        ).then(() => {
+            loading.classList.remove("modal__overlay--visible");
+            success.classList.add("modal__overlay--visible");
         }).catch(() => {
             loading.classList.remove("modal__overlay--visible");
             alert(
-                "The email service is temporarily unavailable. Please contact me directly on tchowdhhury29@gmail.com"
+                "The email service is temporarily unavailable. Please contact me directly on tchowdhury29@gmail.com"
             );
-        })
+        });
 }
-//Code to create toggling Modal to open and close it
+
+// ===== MODAL TOGGLE =====
 function toggleModal() {
     if (isModalOpen) {
         isModalOpen = false;
-        return document.body.classList.remove("modal--open")
+        return document.body.classList.remove("modal--open");
     }
-    //toggle modal
 
     isModalOpen = true;
-    document.body.classList += " modal--open";
+    document.body.classList.add("modal--open");
 }
 
+// ===== PRELOADER ANIMATION =====
+function initPreloader() {
+    const preloader = document.getElementById('preloader');
 
+    setTimeout(() => {
+        preloader.classList.add('preloader--hidden');
+
+        setTimeout(() => {
+            preloader.style.display = 'none';
+            // Trigger hero animations after preloader
+            initHeroAnimations();
+        }, 500);
+    }, 1400);
+}
+
+// ===== HERO TEXT SCRAMBLE =====
+function scrambleText(element, finalText, duration = 800) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*';
+    const totalFrames = Math.round(duration / 40);
+    let frame = 0;
+
+    const interval = setInterval(() => {
+        element.textContent = finalText
+            .split('')
+            .map((char, i) => {
+                if (char === ' ') return ' ';
+                if (i < Math.floor((frame / totalFrames) * finalText.length)) {
+                    return char;
+                }
+                return chars[Math.floor(Math.random() * chars.length)];
+            })
+            .join('');
+
+        if (frame >= totalFrames) {
+            element.textContent = finalText;
+            clearInterval(interval);
+        }
+        frame++;
+    }, 40);
+}
+
+function initHeroAnimations() {
+    const titles = document.querySelectorAll('.title');
+    const headerPara = document.querySelector('.header__para');
+    const socialList = document.querySelector('.social__list');
+
+    if (titles.length >= 2) {
+        scrambleText(titles[0], 'Hey', 800);
+
+        setTimeout(() => {
+            scrambleText(titles[1], "I'm Tahsin.", 800);
+        }, 400);
+    }
+
+    // Animate para and social list after text is done
+    setTimeout(() => {
+        if (headerPara) headerPara.classList.add('hero-animate-in');
+        if (socialList) socialList.classList.add('hero-animate-in');
+    }, 1600);
+}
+
+// ===== CUSTOM CURSOR =====
+function initCustomCursor() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
+    const cursorDot = document.getElementById('cursor-dot');
+    const cursorRing = document.getElementById('cursor-ring');
+
+    if (!cursorDot || !cursorRing) return;
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let dotX = 0;
+    let dotY = 0;
+    let ringX = 0;
+    let ringY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+
+        // Dot follows directly
+        cursorDot.style.left = mouseX + 'px';
+        cursorDot.style.top = mouseY + 'px';
+    });
+
+    // Ring follows with lag via requestAnimationFrame
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.2;
+        ringY += (mouseY - ringY) * 0.2;
+
+        cursorRing.style.left = ringX + 'px';
+        cursorRing.style.top = ringY + 'px';
+
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Expand cursor on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .click, .project__wrapper, .social__link');
+
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor--hover');
+        });
+
+        el.addEventListener('mouseleave', () => {
+            document.body.classList.remove('cursor--hover');
+        });
+    });
+}
+
+// ===== SCROLL REVEAL ANIMATIONS =====
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.reveal');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+}
+
+// ===== VANILLA TILT 3D CARDS =====
+function initVanillaTilt() {
+    if (typeof VanillaTilt === 'undefined') return;
+
+    // Apply tilt to all project cards except the first one
+    const projectCards = document.querySelectorAll('.project:not(:first-child) .project__wrapper');
+
+    projectCards.forEach(card => {
+        VanillaTilt.init(card, {
+            max: 8,
+            speed: 400,
+            glare: true,
+            'max-glare': 0.15,
+            scale: 1.03,
+            gyroscope: false
+        });
+    });
+}
+
+// ===== MAGNETIC BUTTON EFFECT =====
+function initMagneticButtons() {
+    if (!window.matchMedia('(hover: hover)').matches) return;
+
+    const magneticElements = document.querySelectorAll('.social__link, .mail__btn');
+
+    magneticElements.forEach(el => {
+        el.addEventListener('mousemove', (e) => {
+            const rect = el.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            const deltaX = (e.clientX - centerX) * 0.3;
+            const deltaY = (e.clientY - centerY) * 0.3;
+            el.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+        });
+
+        el.addEventListener('mouseleave', () => {
+            el.style.transform = 'translate(0, 0)';
+            el.style.transition = 'transform 500ms cubic-bezier(0.23, 1, 0.32, 1)';
+        });
+
+        el.addEventListener('mouseenter', () => {
+            el.style.transition = 'transform 100ms ease-out';
+        });
+    });
+}
+
+// ===== INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', () => {
+    initPreloader();
+    initCustomCursor();
+    initScrollReveal();
+    initVanillaTilt();
+    initMagneticButtons();
+});
