@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --var(--maroon): #800000;
-  --var(--maroon)-dark: var(--maroon-dark);
-  --var(--maroon)-glow: rgba(128, 0, 0, 0.4);
+  --maroon: #800000;
+  --maroon-dark: #5c0000;
+  --maroon-glow: rgba(128, 0, 0, 0.4);
   --bg-light: rgb(245, 245, 245);
-  --bg-dark: var(--bg-dark);
-  --text-dark: var(--bg-dark);
+  --bg-dark: #242424;
+  --text-dark: #242424;
   --text-light: #ffffff;
-  --overlay-dark: var(--overlay-dark);
+  --overlay-dark: #1c1d25;
 }
 
 * {
