@@ -171,15 +171,6 @@ body.dark-theme {
   --text-dark: var(--text-light);
 }
 
-.dark-theme .title,
-.dark-theme .section__title,
-.dark-theme .section__sub-title,
-.dark-theme .nav__link--anchor,
-.dark-theme .fa-adjust,
-.dark-theme .header__para
-{
-    color: white;
-}
 
 .dark-theme section {
     background-color: var(--bg-dark);
@@ -232,7 +223,8 @@ LANDING PAGE
 .header__para {
     font-size: 24px;
     line-height: 2;
-    max-width: 450px;;
+    max-width: 450px;
+    color: var(--text-dark);
 }
 
 .social__list {
@@ -370,7 +362,7 @@ nav {
 
 .nav__link--anchor {
     font-size:16px;
-    color:var(--bg-dark);
+    color: var(--text-dark);
     font-weight: 700;
 }
 
@@ -602,6 +594,7 @@ PROJECTS
     text-align: center;
     font-size: 48px;
     margin-bottom: 60px;
+    color: var(--text-dark);
 }
 
 .project {
@@ -1058,9 +1051,7 @@ GRADIENT & GLOW EFFECTS
 }
 
 body.dark-theme #landing-page {
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(128, 0, 0, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 20%, rgba(128, 0, 0, 0.08) 0%, transparent 50%);
+  background: #242424;
 }
 
 .title.maroon {
