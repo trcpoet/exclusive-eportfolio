@@ -110,6 +110,7 @@ function initHeroAnimations() {
     const titles = document.querySelectorAll('.title');
     const headerPara = document.querySelector('.header__para');
     const socialList = document.querySelector('.social__list');
+    const headerPhoto = document.querySelector('.header__photo');
 
     if (titles.length >= 2) {
         scrambleText(titles[0], 'Hey', 800);
@@ -119,10 +120,15 @@ function initHeroAnimations() {
         }, 400);
     }
 
-    // Animate para and social list after text is done
+    // Animate para, social list, and photo after text is done
     setTimeout(() => {
         if (headerPara) headerPara.classList.add('hero-animate-in');
         if (socialList) socialList.classList.add('hero-animate-in');
+        if (headerPhoto) {
+            headerPhoto.style.transition = 'opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1)';
+            headerPhoto.style.transform = 'translateY(0)';
+            headerPhoto.style.opacity = '1';
+        }
     }, 1600);
 }
 
@@ -196,6 +202,19 @@ function initScrollReveal() {
 // ===== VANILLA TILT 3D CARDS =====
 function initVanillaTilt() {
     if (typeof VanillaTilt === 'undefined') return;
+
+    // Apply tilt to headshot photo
+    const headshot = document.querySelector('.header__photo--frame');
+    if (headshot) {
+        VanillaTilt.init(headshot, {
+            max: 15,
+            speed: 600,
+            glare: true,
+            'max-glare': 0.25,
+            scale: 1.04,
+            gyroscope: false
+        });
+    }
 
     // Apply tilt to all project cards except the first one
     const projectCards = document.querySelectorAll('.project:not(:first-child) .project__wrapper');
