@@ -29,10 +29,11 @@
       <nav>
         <div class="logo">TRC</div>
         <ul class="nav__link--list">
-          <li class="nav__link" onclick="toggleModal()">
+          <li class="nav__link">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="event.preventDefault(); toggleModal();"
               >About</a
             >
           </li>
@@ -43,18 +44,19 @@
               >Projects</a
             >
           </li>
-          <li class="nav__link" onclick="toggleModal()">
+          <li class="nav__link">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleModal"
+              onclick="event.preventDefault(); toggleModal();"
               >Contact</a
             >
           </li>
-          <li class="nav__link click" onclick="toggleContrast()">
+          <li class="nav__link click">
             <a
               href="#"
               class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="event.preventDefault(); toggleContrast();"
               ><i class="fa-solid fa-circle-half-stroke"></i
             ></a>
           </li>
@@ -85,7 +87,7 @@
             >
               <i class="fa-brands fa-github"></i>
             </a>
-            <a href="./assets/Tahsin_Resume.docx" target="_blank" download="" class="social__link click">
+            <a href="./assets/Tahsin CV Master v4.pdf" target="_blank" download="" class="social__link click">
               <i class="fa-solid fa-file-pdf"></i>
             </a>
           </div>
@@ -96,11 +98,9 @@
           </div>
         </div>
       </header>
-      <a href="#">
       <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope fa-flip-horizontal"></i>
       </button>
-      </a>
       <a href="#projects" class="scroll">
         <div class="scroll__icon click"></div>
       </a>
@@ -549,12 +549,13 @@
             </a>
             <a
               href="#"
+              onclick="event.preventDefault(); toggleModal();"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Contact
             </a>
             <a
-              href="./assets/Tahsin_Resume.docx" target="_blank"
+              href="./assets/Tahsin CV Master v4.pdf" target="_blank" download=""
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Resume
