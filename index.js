@@ -216,8 +216,8 @@ function initVanillaTilt() {
         });
     }
 
-    // Apply tilt to all project cards except the first one
-    const projectCards = document.querySelectorAll('.project:not(:first-child) .project__wrapper');
+    // Apply tilt to all project cards
+    const projectCards = document.querySelectorAll('.project .project__wrapper');
 
     projectCards.forEach(card => {
         VanillaTilt.init(card, {

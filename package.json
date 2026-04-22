@@ -1,0 +1,26 @@
+{
+  "name": "exclusive-eportfolio",
+  "version": "1.0.0",
+  "description": "I'm a **Full Stack Developer** passionate about building beautiful, functional, and user-centric web applications. I love learning new technologies and solving challenging engineering problems.",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server",
+    "dev": "live-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trcpoet/exclusive-eportfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/trcpoet/exclusive-eportfolio/issues"
+  },
+  "homepage": "https://github.com/trcpoet/exclusive-eportfolio#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
