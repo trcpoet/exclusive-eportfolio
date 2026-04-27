@@ -4,8 +4,8 @@
   "description": "I'm a **Full Stack Developer** passionate about building beautiful, functional, and user-centric web applications. I love learning new technologies and solving challenging engineering problems.",
   "main": "index.js",
   "scripts": {
-    "start": "live-server",
-    "dev": "live-server",
+    "start": "live-server --port=5174 --no-browser",
+    "dev": "live-server --port=5174 --no-browser",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

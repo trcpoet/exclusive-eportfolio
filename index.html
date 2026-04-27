@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TRC</title>
+    <meta
+      name="description"
+      content="Tahsin Rahman Chowdhury — full-stack developer. React, Next.js, TypeScript, Supabase."
+    />
+    <title>Tahsin Rahman Chowdhury | Portfolio</title>
     <link rel="icon" href="./assets/favicon.ico" />
     <link rel="stylesheet" href="style.css" />
     <link
@@ -12,6 +16,8 @@
     />
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <div id="preloader">
       <div class="preloader__content">
         <h1 class="preloader__logo">TRC</h1>
@@ -23,41 +29,64 @@
     <div id="cursor-ring" aria-hidden="true"></div>
 
     <section id="landing-page" onmousemove="moveBackground(event)">
-      <nav>
-        <div class="logo">TRC</div>
-        <ul class="nav__link--list">
-          <li class="nav__link">
-            <a
-              href="javascript:void(0)"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleModal();"
-              >About</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="#projects"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Projects</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="javascript:void(0)"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleModal();"
-              >Contact</a
-            >
-          </li>
-          <li class="nav__link click">
-            <a
-              href="javascript:void(0)"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              onclick="toggleContrast();"
-              ><i class="fa-solid fa-circle-half-stroke"></i
-            ></a>
-          </li>
-        </ul>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <div class="site-nav__inner">
+          <a href="#landing-page" class="logo click" aria-label="Tahsin Chowdhury, home">TRC</a>
+          <ul class="nav__link--list">
+            <li class="nav__link">
+              <a
+                href="#about-me"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >About</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#skills"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Skills</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#experience"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Experience</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#education"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Education</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#projects"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Projects</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="javascript:void(0)"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                onclick="toggleModal();"
+                >Contact</a
+              >
+            </li>
+            <li class="nav__link click">
+              <a
+                href="javascript:void(0)"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                onclick="toggleContrast();"
+                aria-label="Toggle dark theme"
+                ><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
       </nav>
       <header class="header">
         <div class="header__content">
@@ -67,7 +96,7 @@
             I build production-grade full-stack applications with <b class="maroon">React 19, Next.js, TypeScript, and Supabase.</b> Five shipped projects — real-time geo apps, e-commerce platforms, AI-integrated frontends, and SaaS billing systems. Available immediately.
             <br />
             Here's more
-            <b class="maroon click" onclick="toggleModal()">about me.</b>
+            <a href="#about-me" class="maroon header__inline-link">about me.</a>
           </p>
           <div class="social__list">
             <a
@@ -90,15 +119,15 @@
           </div>
         </div>
         <div class="header__photo">
-          <div class="header__photo--frame" style="will-change: transform; transform: perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1); transition: 600ms cubic-bezier(0.03, 0.98, 0.52, 0.99);">
-            <img src="./assets/headshot2.JPG" alt="Tahsin Rahman Chowdhury" class="header__photo--img">
-          <div class="js-tilt-glare" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; overflow: hidden; pointer-events: none; border-radius: inherit;"><div class="js-tilt-glare-inner" style="position: absolute; top: 50%; left: 50%; pointer-events: none; background-image: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 100%); transform: rotate(180deg) translate(-50%, -50%); transform-origin: 0% 0%; opacity: 0; width: 780px; height: 780px; transition: opacity 600ms cubic-bezier(0.03, 0.98, 0.52, 0.99);"></div></div></div>
+          <div class="header__photo--frame">
+            <img src="./assets/headshot2.JPG" alt="Tahsin Rahman Chowdhury" class="header__photo--img" />
+          </div>
         </div>
       </header>
       <button type="button" class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope fa-flip-horizontal"></i>
       </button>
-      <a href="#projects" class="scroll">
+      <a href="#about-me" class="scroll" aria-label="Scroll to about section">
         <div class="scroll__icon click"></div>
       </a>
       <div class="modal">
@@ -110,9 +139,9 @@
             Full Stack Developer.
           </h4>
           <p class="modal__para">
-            I build <b class="maroon">production-grade full-stack applications</b> with <b class="maroon">React, Next.js, TypeScript, and Supabase.</b>
+            I've shipped <b class="maroon">5 production full-stack applications</b> across <b class="maroon">React 19, Next.js 15, TypeScript, Node.js, and PostgreSQL</b> — all live, all built end-to-end from <b class="maroon">Figma to deployment</b>.
             <br />
-            With a strong foundation in <b class="maroon">HTML, CSS, JavaScript, Python, Java, and SQL,</b> I focus on creating <b class="maroon">intuitive and engaging</b> user experiences while solving <b class="maroon">complex engineering problems.</b> Currently working with talented engineers and exploring how <b class="maroon">AI</b> can solve real-world problems.
+            Security-aware by default: <b class="maroon">RLS, OAuth 2.0, JWT, and RBAC</b>. Strong fundamentals in <b>HTML, CSS, JavaScript, Python, Java, and SQL</b>. <b>BS in Information Systems</b> from UT Arlington — available immediately in DFW.
           </p>
           <div class="modal__languages">
             <figure class="modal__language">
@@ -179,6 +208,38 @@
               />
               <span class="language__name">NEXT.JS</span>
             </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                class="modal__language--img"
+                alt="TypeScript Logo"
+              />
+              <span class="language__name">TYPESCRIPT</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                class="modal__language--img"
+                alt="Node.js Logo"
+              />
+              <span class="language__name">NODE.JS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                class="modal__language--img"
+                alt="PostgreSQL Logo"
+              />
+              <span class="language__name">POSTGRESQL</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                class="modal__language--img"
+                alt="Tailwind CSS Logo"
+              />
+              <span class="language__name">TAILWIND</span>
+            </figure>
           </div>
         </div>
         <div class="modal__half modal__contact">
@@ -187,7 +248,7 @@
             Let's get in touch!
           </h3>
           <h4 class="modal__sub-title modal__sub-title--contact">
-            I'm currently open to new oppertunities.
+            I'm currently open to new opportunities.
           </h4>
           <form class="contact__form" onsubmit="event.preventDefault(); contact(event); return false;">
             <div class="form__item">
@@ -225,6 +286,7 @@
       <img src="./assets/semi circle.svg" class="shape shape--8" alt="" />
     </section>
 
+    <main id="main-content">
     <div class="marquee-section" aria-hidden="true">
       <div class="marquee-track">
         <div class="marquee-content">
@@ -250,10 +312,267 @@
       </div>
     </div>
 
+    <section id="about-me">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="About">
+            A bit <span class="maroon">about me</span>
+          </h2>
+          <p class="about__lede reveal reveal--delay-1">
+            Full Stack Developer with <b class="maroon">5 production applications</b> shipped across <b>React 19, Next.js 15, TypeScript, Node.js, and PostgreSQL</b> — all live, all built end-to-end from <b class="maroon">Figma to deployment</b>. Direct Figma-to-code workflow across 4 projects, security-aware development (RLS, OAuth 2.0, JWT, RBAC), and production performance engineering. BS in Information Systems from UT Arlington. Available immediately in DFW.
+          </p>
+          <ul class="stat__grid reveal reveal--delay-2">
+            <li class="stat__card">
+              <span class="stat__value">5</span>
+              <span class="stat__label">Production apps shipped</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">4</span>
+              <span class="stat__label">Figma-to-code builds</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">2024</span>
+              <span class="stat__label">UTA Information Systems grad</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">DFW</span>
+              <span class="stat__label">Available immediately</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="Toolkit">
+            Technical <span class="maroon">skills</span>
+          </h2>
+          <div class="skills__grid">
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Languages</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">JavaScript ES6+</span>
+                <span class="skill__tag">TypeScript</span>
+                <span class="skill__tag">Java</span>
+                <span class="skill__tag">Python</span>
+                <span class="skill__tag">SQL</span>
+                <span class="skill__tag">C</span>
+                <span class="skill__tag">HTML5</span>
+                <span class="skill__tag">CSS3</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Front-End</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">React 19</span>
+                <span class="skill__tag">Next.js 15</span>
+                <span class="skill__tag">App Router · SSR/CSR</span>
+                <span class="skill__tag">Redux</span>
+                <span class="skill__tag">Zustand</span>
+                <span class="skill__tag">Tailwind CSS</span>
+                <span class="skill__tag">GSAP</span>
+                <span class="skill__tag">WCAG 2.0 / ARIA</span>
+                <span class="skill__tag">Responsive design</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Back-End &amp; APIs</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Node.js</span>
+                <span class="skill__tag">Express</span>
+                <span class="skill__tag">REST API design</span>
+                <span class="skill__tag">OAuth 2.0</span>
+                <span class="skill__tag">JWT</span>
+                <span class="skill__tag">Stripe</span>
+                <span class="skill__tag">Supabase PostgREST</span>
+                <span class="skill__tag">Firebase Realtime</span>
+                <span class="skill__tag">Mapbox GL</span>
+                <span class="skill__tag">ML microservices</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Databases</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">PostgreSQL</span>
+                <span class="skill__tag">RLS &amp; complex joins</span>
+                <span class="skill__tag">Drizzle ORM</span>
+                <span class="skill__tag">Firebase (NoSQL · Realtime)</span>
+                <span class="skill__tag">MongoDB</span>
+                <span class="skill__tag">Entity-relationship modelling</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Security</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Row Level Security</span>
+                <span class="skill__tag">OAuth 2.0</span>
+                <span class="skill__tag">JWT handling &amp; refresh</span>
+                <span class="skill__tag">RBAC</span>
+                <span class="skill__tag">Secure API auth</span>
+                <span class="skill__tag">Information Security principles</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Data &amp; Analytics</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">SQL</span>
+                <span class="skill__tag">Python</span>
+                <span class="skill__tag">Tableau</span>
+                <span class="skill__tag">Power BI</span>
+                <span class="skill__tag">BI reporting</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Business &amp; Systems</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Business Systems Analysis</span>
+                <span class="skill__tag">Enterprise Systems (SAP)</span>
+                <span class="skill__tag">ERP workflows</span>
+                <span class="skill__tag">SDLC</span>
+                <span class="skill__tag">Project Management</span>
+                <span class="skill__tag">Operations Management</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Tools &amp; Platforms</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Git &amp; GitHub</span>
+                <span class="skill__tag">Docker</span>
+                <span class="skill__tag">Vercel CI/CD</span>
+                <span class="skill__tag">VS Code</span>
+                <span class="skill__tag">IntelliJ IDEA</span>
+                <span class="skill__tag">Linux/Unix CLI</span>
+                <span class="skill__tag">Figma</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">In Development</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">MongoDB full-stack</span>
+                <span class="skill__tag">Jest &amp; React Testing Library</span>
+                <span class="skill__tag">GitHub Actions CI/CD</span>
+                <span class="skill__tag">AWS fundamentals</span>
+                <span class="skill__tag">Kotlin Android</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="Career">
+            <span class="maroon">Experience</span> &amp; timeline
+          </h2>
+          <ol class="timeline">
+            <li class="timeline__entry reveal reveal--delay-1">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Full Stack Developer</h3>
+                  <span class="timeline__dates">Jan 2024 – Present</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">Self-Employed</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>Designed and shipped <b>5 production full-stack applications</b> across React 19, TypeScript, Node.js, and PostgreSQL — independently owning architecture, security, performance, and Vercel CI/CD across 4 Figma-driven projects.</li>
+                  <li>Identified and resolved a production frame-rate bottleneck in FUN — diagnosed main-thread venue clustering as root cause, moved computation to a <b>Web Worker</b>, and implemented progressive loading across 300+ data points, eliminating drops under continuous real-time load.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__entry reveal reveal--delay-2">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Full Stack Developer <span class="timeline__role--sub">(Coursework Projects)</span></h3>
+                  <span class="timeline__dates">Apr 2021 – May 2024</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">University of Texas at Arlington</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>Designed and developed end-to-end software solutions across web and desktop using JavaScript, HTML5, CSS3, React, SQL, and Java — applying Systems Design and Software Engineering SDLC principles throughout.</li>
+                  <li>Applied Java OOP design patterns, JDBC, multithreading with reentrant locks, JUnit TDD, and SAP/ERP configuration in Enterprise Systems coursework.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__entry reveal reveal--delay-3">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Data Analyst</h3>
+                  <span class="timeline__dates">Aug 2019 – Apr 2021</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">University of Texas at Arlington</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>Gathered, analysed, and developed visualisations from large, diverse data sets using SQL, Python, Tableau, and Power BI — applying Business Intelligence and statistical analysis methods to drive measurable improvements to university data systems.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="Schooling">
+            <span class="maroon">Education</span>
+          </h2>
+          <article class="education__card reveal reveal--delay-1">
+            <div class="education__head">
+              <div>
+                <h3 class="education__school">University of Texas at Arlington</h3>
+                <p class="education__degree">Bachelor of Science, Information Systems · <span class="maroon">May 2024</span></p>
+              </div>
+              <span class="education__years">2019 – 2024</span>
+            </div>
+            <div class="education__chips">
+              <h4 class="education__chips--label">Technical</h4>
+              <div class="skill__tags">
+                <span class="skill__tag">Full-Stack Development</span>
+                <span class="skill__tag">Java Application Development</span>
+                <span class="skill__tag">Database Management Systems</span>
+                <span class="skill__tag">Software Engineering SDLC</span>
+                <span class="skill__tag">Networking</span>
+                <span class="skill__tag">Information Security</span>
+                <span class="skill__tag">Data Structures</span>
+                <span class="skill__tag">Algorithms</span>
+              </div>
+            </div>
+            <div class="education__chips">
+              <h4 class="education__chips--label">Business</h4>
+              <div class="skill__tags">
+                <span class="skill__tag">Business Systems Analysis</span>
+                <span class="skill__tag">Enterprise Systems (SAP/ERP)</span>
+                <span class="skill__tag">Project Management</span>
+                <span class="skill__tag">Operations Management</span>
+                <span class="skill__tag">Business Statistics</span>
+                <span class="skill__tag">Finance</span>
+                <span class="skill__tag">Accounting</span>
+                <span class="skill__tag">Economics</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="projects">
       <div class="container">
         <div class="row">
-          <h1 class="section__title reveal">
+          <h1 class="section__title reveal" data-eyebrow="Selected Works">
             Here are some of my <span class="maroon">projects</span>
           </h1>
           <ul class="projects__list">
@@ -268,12 +587,10 @@
                 <div class="project__description">
                   <h3 class="project__description--title">FUN</h3>
                   <h4 class="project__description--sub-title">
-                    TypeScript, React, Mapbox, Supabase
+                    React 19, TypeScript, Supabase Realtime, PostgreSQL, Mapbox GL
                   </h4>
                   <p class="project__description--para">
-                    A map-first pickup sports game that eliminates group
-                    coordination chaos. Find nearby games, join instantly, chat
-                    in real-time, and build your sports community seamlessly.
+                    Real-time sports platform with RLS across all tables, Web Worker venue clustering across 300+ data points, atomic game booking via PostgreSQL RPCs, and OAuth 2.0. Production-grade security and performance from day one.
                   </p>
                   <div class="project__description--links">
                     <a
@@ -306,13 +623,10 @@
                 <div class="project__description">
                   <h3 class="project__description--title">Skinstric AI</h3>
                   <h4 class="project__description--sub-title">
-                    Next.js, TypeScript, AI, Tailwind CSS
+                    React 19, Next.js, TypeScript, GSAP
                   </h4>
                   <p class="project__description--para">
-                    An AI-powered skincare recommendation platform that analyzes
-                    your skin type and provides personalized product
-                    recommendations. Features intelligent skincare suggestions and
-                    product curation.
+                    Pixel-accurate Figma-to-code component system consuming ML microservice REST APIs. 50+ GSAP sequences with useLayoutEffect DOM alignment, WCAG-compliant UI, and multi-step async ML response handling with confidence-score parsing.
                   </p>
                   <div class="project__description--links">
                     <a
@@ -345,13 +659,10 @@
                 <div class="project__description">
                   <h3 class="project__description--title">Nike Clone</h3>
                   <h4 class="project__description--sub-title">
-                    Next.js, React, TypeScript, Tailwind CSS
+                    Next.js 15, TypeScript, PostgreSQL, Drizzle, Stripe
                   </h4>
                   <p class="project__description--para">
-                    A modern e-commerce platform inspired by Nike's design.
-                    Features product browsing, shopping cart, and checkout
-                    functionality with responsive design and smooth user
-                    experience.
+                    Full-stack e-commerce built from Figma with SSR/CSR rendering boundaries, Stripe REST integration, JWT-secured OAuth flows, and Zustand state management — deployed to production on Vercel.
                   </p>
                   <div class="project__description--links">
                     <a
@@ -384,12 +695,10 @@
                 <div class="project__description">
                   <h3 class="project__description--title">Summarist</h3>
                   <h4 class="project__description--sub-title">
-                    React, Firebase, Stripe, Vite
+                    React 19, Next.js 15, Firebase Auth, Stripe
                   </h4>
                   <p class="project__description--para">
-                    An audiobook platform for learning faster. Browse and listen
-                    to curated book summaries with subscription plans, a
-                    personalized library, and smooth audio playback.
+                    Full-stack SaaS with RBAC premium gating end-to-end — Firebase Auth token through SSR boundaries to client state. Real-time Firestore sync, Stripe billing, and a custom HTML5 audio player.
                   </p>
                   <div class="project__description--links">
                     <a
@@ -526,6 +835,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <footer>
       <div class="container">
@@ -534,12 +844,14 @@
           <div class="footer__social--list">
             <a
               href="https://github.com/trcpoet" target="_blank"
+              rel="noopener noreferrer"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               Github
             </a>
             <a
-              href="https://www.linkedin.com/in/trcpoet/" target="_blank"
+              href="https://www.linkedin.com/in/tahsinchowdhury-trc/" target="_blank"
+              rel="noopener noreferrer"
               class="footer__social--link link__hover-effect link__hover-effect--white"
             >
               LinkedIn
@@ -559,7 +871,7 @@
             </a>
           </div>
           <div class="footer__copyright">
-            Copyright &copy; 2025 Tahsin Rahman Chowdhury
+            Copyright &copy; 2026 Tahsin Rahman Chowdhury
           </div>
         </div>
       </div>
