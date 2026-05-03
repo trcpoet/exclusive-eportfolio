@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" role="img" aria-label="TRC">
+  <defs>
+    <linearGradient id="trcGrad180" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#800000"/>
+      <stop offset="100%" stop-color="#5c0000"/>
+    </linearGradient>
+  </defs>
+  <rect width="180" height="180" rx="36" fill="url(#trcGrad180)"/>
+  <text
+    x="90"
+    y="118"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="58"
+    font-weight="900"
+    fill="#ffffff"
+    letter-spacing="-0.02em"
+  >TRC</text>
+</svg>

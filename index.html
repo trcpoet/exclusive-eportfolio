@@ -8,7 +8,8 @@
       content="Tahsin Rahman Chowdhury — full-stack developer. React, Next.js, TypeScript, Supabase."
     />
     <title>Tahsin Rahman Chowdhury | Portfolio</title>
-    <link rel="icon" href="./assets/favicon.ico" />
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.svg" />
     <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -32,7 +33,7 @@
       <nav class="site-nav" id="site-nav" aria-label="Primary">
         <div class="site-nav__inner">
           <a href="#landing-page" class="logo click" aria-label="Tahsin Chowdhury, home">TRC</a>
-          <ul class="nav__link--list">
+          <ul class="nav__link--list nav__link--list--desktop">
             <li class="nav__link">
               <a
                 href="#about-me"
@@ -76,18 +77,71 @@
                 >Contact</a
               >
             </li>
-            <li class="nav__link click">
-              <a
-                href="javascript:void(0)"
-                class="nav__link--anchor link__hover-effect link__hover-effect--black"
-                onclick="toggleContrast();"
-                aria-label="Toggle dark theme"
-                ><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i
-              ></a>
+          </ul>
+          <div class="site-nav__triggers">
+            <button
+              type="button"
+              class="nav__menu-toggle click"
+              id="nav-menu-toggle"
+              aria-expanded="false"
+              aria-controls="nav-drawer"
+              aria-label="Open menu"
+            >
+              <span class="nav__menu-toggle-bars" aria-hidden="true"></span>
+            </button>
+            <a
+              href="javascript:void(0)"
+              class="nav__theme-toggle click nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="toggleContrast();"
+              aria-label="Toggle dark theme"
+              ><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </nav>
+      <div id="nav-drawer" class="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__backdrop" tabindex="-1" aria-hidden="true"></div>
+        <div
+          class="nav-drawer__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="nav-drawer-title"
+          id="nav-drawer-panel"
+        >
+          <div class="nav-drawer__header">
+            <p id="nav-drawer-title" class="nav-drawer__title">Menu</p>
+            <button
+              type="button"
+              class="nav-drawer__close click"
+              aria-label="Close menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="nav-drawer__list">
+            <li>
+              <a href="#about-me" class="nav-drawer__link">About</a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-drawer__link">Skills</a>
+            </li>
+            <li>
+              <a href="#experience" class="nav-drawer__link">Experience</a>
+            </li>
+            <li>
+              <a href="#education" class="nav-drawer__link">Education</a>
+            </li>
+            <li>
+              <a href="#projects" class="nav-drawer__link">Projects</a>
+            </li>
+            <li>
+              <button type="button" class="nav-drawer__link nav-drawer__link--button">
+                Contact
+              </button>
             </li>
           </ul>
         </div>
-      </nav>
+      </div>
       <header class="header">
         <div class="header__content">
           <h1 class="title">Hey</h1>
