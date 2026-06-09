@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tahsin R. Chowdhury — Full Stack Engineer &amp; Data Analyst focused on dependable products, clear analytics, and respectful collaboration. UT Arlington BS Information Systems (STEM, AACSB). DFW."
+    />
+    <title>Tahsin R. Chowdhury | Full Stack Engineer &amp; Data Analyst</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div id="scroll-progress" aria-hidden="true"></div>
+    <div id="preloader">
+      <div class="preloader__content">
+        <h1 class="preloader__logo">TRC</h1>
+        <div class="preloader__line"></div>
+      </div>
+    </div>
+    <div id="grain" aria-hidden="true"></div>
+    <div id="cursor-dot" aria-hidden="true"></div>
+    <div id="cursor-ring" aria-hidden="true"></div>
+
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <div class="site-nav__inner">
+          <a href="#landing-page" class="logo click" aria-label="Tahsin Chowdhury, home">TRC</a>
+          <ul class="nav__link--list nav__link--list--desktop">
+            <li class="nav__link">
+              <a
+                href="#about-me"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >About</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#skills"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Skills</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#experience"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Experience</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#education"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Education</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#data-work"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Data</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="#web-projects"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                >Projects</a
+              >
+            </li>
+            <li class="nav__link">
+              <a
+                href="javascript:void(0)"
+                class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                onclick="toggleModal();"
+                >Contact</a
+              >
+            </li>
+          </ul>
+          <div class="site-nav__triggers">
+            <button
+              type="button"
+              class="nav__menu-toggle click"
+              id="nav-menu-toggle"
+              aria-expanded="false"
+              aria-controls="nav-drawer"
+              aria-label="Open menu"
+            >
+              <span class="nav__menu-toggle-bars" aria-hidden="true"></span>
+            </button>
+            <a
+              href="javascript:void(0)"
+              class="nav__theme-toggle click nav__link--anchor link__hover-effect link__hover-effect--black"
+              onclick="toggleContrast();"
+              aria-label="Toggle dark theme"
+              ><i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+      </nav>
+      <div id="nav-drawer" class="nav-drawer" aria-hidden="true">
+        <div class="nav-drawer__backdrop" tabindex="-1" aria-hidden="true"></div>
+        <div
+          class="nav-drawer__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="nav-drawer-title"
+          id="nav-drawer-panel"
+        >
+          <div class="nav-drawer__header">
+            <p id="nav-drawer-title" class="nav-drawer__title">Menu</p>
+            <button
+              type="button"
+              class="nav-drawer__close click"
+              aria-label="Close menu"
+            >
+              <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+          </div>
+          <ul class="nav-drawer__list">
+            <li>
+              <a href="#about-me" class="nav-drawer__link">About</a>
+            </li>
+            <li>
+              <a href="#skills" class="nav-drawer__link">Skills</a>
+            </li>
+            <li>
+              <a href="#experience" class="nav-drawer__link">Experience</a>
+            </li>
+            <li>
+              <a href="#education" class="nav-drawer__link">Education</a>
+            </li>
+            <li>
+              <a href="#data-work" class="nav-drawer__link">Data</a>
+            </li>
+            <li>
+              <a href="#web-projects" class="nav-drawer__link">Projects</a>
+            </li>
+            <li>
+              <button type="button" class="nav-drawer__link nav-drawer__link--button">
+                Contact
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey</h1>
+          <h1 class="title maroon">I'm Tahsin.</h1>
+          <p class="header__para">
+            I’m a <b class="maroon">Full Stack Engineer</b> and <b class="maroon">Data Analyst</b> who cares about the people on the other side of the screen—whether they are customers, teammates, or leaders reading a dashboard. Over <b>5+ years</b> I have shipped <b>five</b> production web products and <b>three</b> end-to-end data engagements, from live maps and commerce to SaaS billing and survey-driven BI. I focus on clear UX, dependable auth and data, steady releases, and communication you can count on. <b class="maroon">DFW · available now.</b>
+            <br />
+            Here's more
+            <a href="#about-me" class="maroon header__inline-link">about me.</a>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/tahsinchowdhury-trc/"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/trcpoet"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="./assets/Tahsin_CV_Master_v8.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              download=""
+              class="social__link click"
+              aria-label="Download resume (Word, Master v8)"
+            >
+              <i class="fa-solid fa-file-word" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="header__photo">
+          <div class="header__photo--frame">
+            <img src="./assets/headshot2.JPG" alt="Tahsin Rahman Chowdhury" class="header__photo--img" />
+          </div>
+        </div>
+      </header>
+      <button type="button" class="mail__btn click" onclick="toggleModal()">
+        <i class="fa-solid fa-envelope fa-flip-horizontal"></i>
+      </button>
+      <a href="#about-me" class="scroll" aria-label="Scroll to about section">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+          <h3 class="modal__title modal__title--about">
+            Here's a bit about me.
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--about">
+            Full Stack Engineer · Data Analyst
+          </h4>
+          <p class="modal__para">
+            I build software and analytics the way I would want them delivered to <b>me</b>: clear expectations, steady progress, and respect for people’s time. <b class="maroon">Five production web applications</b> from design intent through deployment—payments, maps, realtime collaboration, and ML-backed flows—with attention to <b class="maroon">security, testing, and release quality</b>. On the analytics side, I turn messy operational data and survey exports into <b class="maroon">SQL and Power BI work</b> stakeholders can trust in reviews and planning sessions.
+            <br />
+            When design and engineering priorities differ, I default to <b>listening first</b>, showing options with a prototype or metrics, and agreeing on a path that protects both the user experience and delivery dates. <b>BS Information Systems</b> (STEM + AACSB, UT Arlington, May 2024). <b class="maroon">DFW · ready to contribute.</b>
+          </p>
+          <div class="modal__languages">
+            <figure class="modal__language">
+              <img
+                src="https://cdn.iconscout.com/icon/free/png-256/html5-40-1175193.png"
+                class="modal__language--img"
+                alt=""
+              />
+              <span class="language__name">HTML</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                class="modal__language--img"
+                alt="CSS Logo"
+              />
+              <span class="language__name">CSS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                class="modal__language--img"
+                alt="JavaScript Logo"
+              />
+              <span class="language__name">JavaScript</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                class="modal__language--img"
+                alt="React Logo"
+              />
+              <span class="language__name">React</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                class="modal__language--img"
+                alt="Python Logo"
+              />
+              <span class="language__name">Python</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                class="modal__language--img"
+                alt="Java Logo"
+              />
+              <span class="language__name">Java</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                class="modal__language--img"
+                alt="SQL Logo"
+              />
+              <span class="language__name">SQL</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+                class="modal__language--img"
+                alt="Next.js Logo"
+              />
+              <span class="language__name">NEXT.JS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+                class="modal__language--img"
+                alt="TypeScript Logo"
+              />
+              <span class="language__name">TYPESCRIPT</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                class="modal__language--img"
+                alt="Node.js Logo"
+              />
+              <span class="language__name">NODE.JS</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                class="modal__language--img"
+                alt="PostgreSQL Logo"
+              />
+              <span class="language__name">POSTGRESQL</span>
+            </figure>
+            <figure class="modal__language">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
+                class="modal__language--img"
+                alt="Tailwind CSS Logo"
+              />
+              <span class="language__name">TAILWIND</span>
+            </figure>
+          </div>
+        </div>
+        <div class="modal__half modal__contact">
+          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+          <h3 class="modal__title modal__title--contact">
+            Let's get in touch!
+          </h3>
+          <h4 class="modal__sub-title modal__sub-title--contact">
+            I'm currently open to new opportunities.
+          </h4>
+          <form class="contact__form" onsubmit="event.preventDefault(); contact(event); return false;">
+            <div class="form__item">
+              <label class="form__item--label">Name</label>
+              <input class="input" name="user_name" type="text" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Email</label>
+              <input class="input" name="user_email" type="email" required />
+            </div>
+            <div class="form__item">
+              <label class="form__item--label">Message</label>
+              <textarea class="input" name="message" type="text" required></textarea>
+            </div>
+            <button id="contact__submit" class="form__submit">
+              Send message
+            </button>
+          </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Looking forward to speaking to you soon.
+          </div>
+        </div>
+      </div>
+      <img src="./assets/semi circle.svg" class="shape shape--0" alt="" />
+      <img src="./assets/circle.svg" class="shape shape--1" alt="" />
+      <img src="./assets/squiggly.svg" class="shape shape--2" alt="" />
+      <img src="./assets/circle.svg" class="shape shape--3" alt="" />
+      <img src="./assets/triangle.svg" class="shape shape--4" alt="" />
+      <img src="./assets/circle.svg" class="shape shape--5" alt="" />
+      <img src="./assets/squiggly.svg" class="shape shape--6" alt="" />
+      <img src="./assets/circle.svg" class="shape shape--7" alt="" />
+      <img src="./assets/semi circle.svg" class="shape shape--8" alt="" />
+    </section>
+
+    <main id="main-content">
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span>React</span><span>★</span>
+          <span>Next.js</span><span>★</span>
+          <span>TypeScript</span><span>★</span>
+          <span>AWS</span><span>★</span>
+          <span>PostgreSQL</span><span>★</span>
+          <span>Power BI</span><span>★</span>
+          <span>Python</span><span>★</span>
+          <span>Node.js</span><span>★</span>
+          <span>Tailwind CSS</span><span>★</span>
+          <span>Supabase</span><span>★</span>
+          <span>Three.js</span><span>★</span>
+          <span>Firebase</span><span>★</span>
+          <span>React</span><span>★</span>
+          <span>Next.js</span><span>★</span>
+          <span>TypeScript</span><span>★</span>
+          <span>AWS</span><span>★</span>
+          <span>PostgreSQL</span><span>★</span>
+          <span>Power BI</span><span>★</span>
+          <span>Python</span><span>★</span>
+          <span>Node.js</span><span>★</span>
+          <span>Tailwind CSS</span><span>★</span>
+          <span>Supabase</span><span>★</span>
+          <span>Three.js</span><span>★</span>
+          <span>Firebase</span><span>★</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about-me">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="About">
+            A bit <span class="maroon">about me</span>
+          </h2>
+          <p class="about__lede reveal reveal--delay-1">
+            I care when a beautiful mock does not match what <b>end users</b> feel in production—or when a report is accurate but still does not help anyone decide. With a BS in Information Systems (<b>STEM</b>, <b>AACSB</b>, UT Arlington, May 2024) and <b class="maroon">5+ years</b> across engineering and analytics, I have delivered <b>five live web applications</b> and <b>three data engagements</b> with the same through-line: respect for users, clarity for stakeholders, and ownership through launch. I translate design into accessible UI, address performance before it becomes a support ticket, and treat code review as a chance to align—not to score points. <b class="maroon">DFW · ready to serve your next initiative.</b>
+          </p>
+          <ul class="stat__grid reveal reveal--delay-2">
+            <li class="stat__card">
+              <span class="stat__value">5</span>
+              <span class="stat__label">Shipped web products</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">3</span>
+              <span class="stat__label">Analytics partners used</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">5+</span>
+              <span class="stat__label">Years building &amp; analyzing</span>
+            </li>
+            <li class="stat__card">
+              <span class="stat__value">DFW</span>
+              <span class="stat__label">Ready for your team</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="How I serve teams">
+            Skills <span class="maroon">for people-first delivery</span>
+          </h2>
+          <p class="skills__intro reveal reveal--delay-1">
+            I stay close to <b>users, customers, and internal stakeholders</b> across the full lifecycle: interfaces that explain themselves, access controls that protect real people’s data, APIs and databases teams can reason about, cloud and CI/CD pipelines that reduce release stress, tests that prevent surprises in production, and analytics that answer questions decision-makers actually ask. The stack below is how I deliver that care at scale.
+          </p>
+          <div class="skills__grid">
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Languages &amp; foundations</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">JavaScript ES6+ — readable UI logic</span>
+                <span class="skill__tag">TypeScript — safer change for teams</span>
+                <span class="skill__tag">Java — structured services &amp; coursework depth</span>
+                <span class="skill__tag">Python — analysis through small apps</span>
+                <span class="skill__tag">SQL — clear answers from complex data</span>
+                <span class="skill__tag">C — systems-level fundamentals</span>
+                <span class="skill__tag">HTML5 / CSS3 — accessible structure &amp; layout</span>
+                <span class="skill__tag">SCSS / SASS — maintainable styling</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Interfaces customers understand</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">React 19 — responsive, component-driven UI</span>
+                <span class="skill__tag">Next.js 15 — performance &amp; SEO where they matter</span>
+                <span class="skill__tag">App Router · SSR/CSR — fit rendering to the task</span>
+                <span class="skill__tag">Redux / Zustand — predictable client state</span>
+                <span class="skill__tag">Tailwind CSS — consistent design velocity</span>
+                <span class="skill__tag">GSAP — motion that supports the task</span>
+                <span class="skill__tag">WCAG 2.0 / ARIA — accessibility as standard</span>
+                <span class="skill__tag">Responsive design — every device respected</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Services partners can rely on</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Node.js / Express — dependable APIs</span>
+                <span class="skill__tag">REST design — clear contracts for integrators</span>
+                <span class="skill__tag">OAuth 2.0 — familiar, secure sign-in</span>
+                <span class="skill__tag">JWT — session handling with refresh discipline</span>
+                <span class="skill__tag">Stripe — payments customers trust</span>
+                <span class="skill__tag">Supabase PostgREST — realtime product data</span>
+                <span class="skill__tag">Firebase Realtime — live updates where needed</span>
+                <span class="skill__tag">Mapbox GL — maps that stay responsive</span>
+                <span class="skill__tag">ML microservices — model output the UI can explain</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Data teams can trust</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">PostgreSQL — relational integrity</span>
+                <span class="skill__tag">RLS &amp; joins — tenant-safe access patterns</span>
+                <span class="skill__tag">Drizzle ORM — typed, maintainable access</span>
+                <span class="skill__tag">DynamoDB / RDS MySQL — fit storage to the problem</span>
+                <span class="skill__tag">Firebase / Mongo — flexibility when requirements shift</span>
+                <span class="skill__tag">CTEs &amp; windows — transparent analytical SQL</span>
+                <span class="skill__tag">ER modelling — schema aligned to the business</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Cloud &amp; delivery</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Lambda — scalable, event-driven work</span>
+                <span class="skill__tag">API Gateway — governed entry to services</span>
+                <span class="skill__tag">S3 &amp; CloudFront — reliable global assets</span>
+                <span class="skill__tag">IAM least privilege — reduced risk posture</span>
+                <span class="skill__tag">Budget alarms — cost visibility for stakeholders</span>
+                <span class="skill__tag">Vercel CI/CD — repeatable preview &amp; production</span>
+                <span class="skill__tag">Docker — consistent environments for teams</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Quality your users feel</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">TDD mindset — confidence before merge</span>
+                <span class="skill__tag">Jest / RTL — UI behaviour covered by tests</span>
+                <span class="skill__tag">Zod — validated payloads end to end</span>
+                <span class="skill__tag">JUnit — disciplined Java test practice</span>
+                <span class="skill__tag">Chrome DevTools — measured performance tuning</span>
+                <span class="skill__tag">GitHub PR review — constructive, timely feedback</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Security &amp; access</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Row Level Security — data scoped to the right user</span>
+                <span class="skill__tag">OAuth 2.0 / JWT refresh — current auth practice</span>
+                <span class="skill__tag">RBAC — clear roles for customers &amp; staff</span>
+                <span class="skill__tag">Secure API auth — fewer vulnerabilities in the field</span>
+                <span class="skill__tag">InfoSec coursework — risk-aware engineering habits</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Analytics for decisions</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">SQL — CTEs &amp; windows for operational questions</span>
+                <span class="skill__tag">pandas / NumPy — clean inputs, clear outputs</span>
+                <span class="skill__tag">scikit-learn — interpretable model workflows</span>
+                <span class="skill__tag">Streamlit — stakeholder-friendly exploration</span>
+                <span class="skill__tag">Power BI + DAX — executive-ready reporting</span>
+                <span class="skill__tag">Star schema / Power Query — auditable BI models</span>
+                <span class="skill__tag">Tableau — complementary visual analysis</span>
+                <span class="skill__tag">Matplotlib · Seaborn · Altair — clear charts</span>
+                <span class="skill__tag">Excel — rapid analysis when speed matters</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-1">
+              <h3 class="skill__category--title">Business context</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Business systems analysis — IT aligned to operations</span>
+                <span class="skill__tag">SAP / ERP — enterprise process awareness</span>
+                <span class="skill__tag">ERP workflows — requirements grounded in reality</span>
+                <span class="skill__tag">SDLC — predictable delivery with partners</span>
+                <span class="skill__tag">Project &amp; operations management — respectful scope</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-2">
+              <h3 class="skill__category--title">Collaboration tools</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">Git / GitHub — transparent change history</span>
+                <span class="skill__tag">npm / Yarn — dependable dependency hygiene</span>
+                <span class="skill__tag">VS Code / IntelliJ — daily engineering environments</span>
+                <span class="skill__tag">Linux CLI — comfortable on servers</span>
+                <span class="skill__tag">Figma — design handoff partners appreciate</span>
+                <span class="skill__tag">Jira + Agile/Scrum — steady cadence with the team</span>
+              </div>
+            </article>
+            <article class="skill__category reveal reveal--delay-3">
+              <h3 class="skill__category--title">Continuous learning</h3>
+              <div class="skill__tags">
+                <span class="skill__tag">React Native — mobile experiences for customers</span>
+                <span class="skill__tag">Angular — enterprise UI patterns</span>
+                <span class="skill__tag">GraphQL — flexible client data fetching</span>
+                <span class="skill__tag">FastAPI / Django — Python service depth</span>
+                <span class="skill__tag">GitHub Actions — reliable automation</span>
+                <span class="skill__tag">Storybook — documented UI for cross-functional teams</span>
+                <span class="skill__tag">PyTorch / Snowflake — ML &amp; warehouse expansion</span>
+                <span class="skill__tag">MongoDB full-stack — additional persistence options</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="The journey">
+            <span class="maroon">Experience</span> that supports delivery
+          </h2>
+          <ol class="timeline">
+            <li class="timeline__entry reveal reveal--delay-1">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Founder &amp; Full Stack Engineer</h3>
+                  <span class="timeline__dates">Jan 2024 – Present</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">Self-Employed</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>I delivered <b>end-to-end web products</b> for real use cases: five shipped apps where I owned design handoff through database design, authentication, and dependable <b>Vercel</b> releases—four of them full design-to-code ownership so stakeholders saw one coherent story.</li>
+                  <li>I integrated <b>payments, maps, realtime data, sign-in, and ML endpoints</b> so customers get a smooth front-of-house experience while support and engineering get clear errors, retries, and documented boundaries.</li>
+                  <li>When FUN’s map slowed under <b>300+ live pins</b>, I profiled in DevTools, moved heavy work into a <b>Web Worker</b>, and tuned loading so the UI stayed responsive under real crowd conditions.</li>
+                  <li>I built a <b>serverless AWS foundation</b> (Lambda, API Gateway, DynamoDB, RDS, S3, CloudFront, least-privilege IAM, budget alarms) so capacity scales with demand without a dedicated ops footprint.</li>
+                  <li>Security and QA aren’t footnotes—<b>RLS, OAuth, JWT refresh, RBAC</b> show up everywhere, and <b>Jest, Testing Library, Zod, and honest PR review</b> keep regressions from becoming customer surprises.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__entry reveal reveal--delay-2">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Software Developer <span class="timeline__role--sub">(Coursework)</span></h3>
+                  <span class="timeline__dates">Apr 2021 – May 2024</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">University of Texas at Arlington</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>UTA is where I internalized the <b>full SDLC</b>—Agile cadence paired with shipped coursework in React, TypeScript, Java, SQL, and Python, with documentation written for the next person on the team.</li>
+                  <li>Java coursework stressed <b>OOP, JDBC, concurrency with locks, and JUnit TDD</b>—layered applications held to both rubric requirements and a personal bar for clarity and maintainability.</li>
+                  <li>I even spent quality time inside <b>SAP/ERP</b> simulations—procurement, inventory, materials—so I’d never treat “business logic” as someone else’s problem.</li>
+                </ul>
+              </div>
+            </li>
+            <li class="timeline__entry reveal reveal--delay-3">
+              <div class="timeline__marker" aria-hidden="true"></div>
+              <div class="timeline__body">
+                <div class="timeline__head">
+                  <h3 class="timeline__role">Data Analyst</h3>
+                  <span class="timeline__dates">Aug 2019 – Apr 2021</span>
+                </div>
+                <div class="timeline__meta">
+                  <span class="timeline__company">University of Texas at Arlington</span>
+                  <span class="timeline__location">Arlington, TX</span>
+                </div>
+                <ul class="timeline__bullets">
+                  <li>For two years I lived inside <b>UTA’s institutional data</b>—cleaning, modelling, and visualising messy operational datasets until recurring reports stopped being a scavenger hunt for busy staff.</li>
+                  <li>I learned the soft skill behind the hard numbers: <b>Power BI decks, crisp write-ups, and live presentations</b> that helped non-technical partners trust the trend lines.</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="row">
+          <h2 class="section__title reveal" data-eyebrow="Foundations">
+            <span class="maroon">Education</span> that shaped me
+          </h2>
+          <article class="education__card reveal reveal--delay-1">
+            <div class="education__head">
+              <div>
+                <h3 class="education__school">University of Texas at Arlington</h3>
+                <p class="education__degree">
+                  Bachelor of Science, Information Systems ·
+                  <span class="maroon">STEM-designated · AACSB-accredited · GPA 3.0+ · May 2024</span>
+                </p>
+              </div>
+              <span class="education__years">2019 – 2024</span>
+            </div>
+            <div class="education__chips">
+              <h4 class="education__chips--label">Technical</h4>
+              <div class="skill__tags">
+                <span class="skill__tag">Full-stack craft — idea to deploy</span>
+                <span class="skill__tag">Java apps — disciplined OOP</span>
+                <span class="skill__tag">Databases — design before dashboards</span>
+                <span class="skill__tag">Software engineering &amp; SDLC</span>
+                <span class="skill__tag">Networking — how bits actually travel</span>
+                <span class="skill__tag">Information security — assume breach</span>
+                <span class="skill__tag">Cloud computing — reliable scale</span>
+                <span class="skill__tag">Data structures &amp; algorithms — speed with sense</span>
+              </div>
+            </div>
+            <div class="education__chips">
+              <h4 class="education__chips--label">Business</h4>
+              <div class="skill__tags">
+                <span class="skill__tag">Business systems analysis</span>
+                <span class="skill__tag">Enterprise systems (SAP / ERP)</span>
+                <span class="skill__tag">Project management — scope with empathy</span>
+                <span class="skill__tag">Operations management</span>
+                <span class="skill__tag">Business statistics — truth in variance</span>
+                <span class="skill__tag">Finance &amp; accounting literacy</span>
+                <span class="skill__tag">Economics — incentives matter</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title reveal" data-eyebrow="Selected work">
+            Projects I’m <span class="maroon">proud to stand behind</span>
+          </h1>
+          <p class="projects__lead reveal reveal--delay-1">
+            Each build is grounded in <b>people who depend on the product</b>—clear maps and messaging, commerce flows that feel safe, media experiences that respect access and billing, and analytics stakeholders can question with confidence. Hover a card on desktop or open any link to see the live app and repository.
+          </p>
+          <h2 id="web-projects" class="projects__subsection-title reveal">Shipped web products</h2>
+          <ul class="projects__list">
+            <li class="project reveal reveal--delay-1">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/fun-screenshot.png"
+                  class="project__img"
+                  alt="FUN Sports Map App"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">FUN</h3>
+                  <h4 class="project__description--sub-title">
+                    Sports nights on a map · realtime coordination
+                  </h4>
+                  <p class="project__description--para">
+                    Organizers and players need a map that keeps up—venues visible, chat reliable, bookings without conflicts. I shipped a full stack on <b>React 19, TypeScript, Node/Express, Postgres, Supabase channels, Mapbox, Docker</b>, with <b>RLS</b> and OAuth so each group’s data stays private. When <b>300+ pins</b> stressed the UI thread, I profiled in DevTools, moved heavy work to a <b>Web Worker</b>, and tuned loading so the experience stays smooth under real event load.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> A responsive map at real crowd density, dependable messaging, and tenant isolation people can trust.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://fun-amber-mu.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/FUN"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-2">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/skinstric.png"
+                  class="project__img"
+                  alt="Skinstric AI"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Skinstric AI</h3>
+                  <h4 class="project__description--sub-title">
+                    Beauty meets biology · guided AI skincare flow
+                  </h4>
+                  <p class="project__description--para">
+                    Users upload a photo and wait for analysis—they deserve clear status, honest uncertainty, and respectful errors. I matched detailed Figma specs in <b>React + Next + TypeScript</b>, used <b>GSAP</b> for motion that supports the flow without hurting layout, and wired async ML responses with explicit loading, confidence, and failure paths. Accessibility and keyboard support stayed in scope from the first screen.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> A production-ready flow users can complete—even when the network is uneven or the model is cautious.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://skinstric-orpin.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/Skinstric"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-3">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/NikeClone.png"
+                  class="project__img"
+                  alt="Nike E-Commerce Store"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Nike Clone</h3>
+                  <h4 class="project__description--sub-title">
+                    E-commerce demo · fast catalog, trustworthy checkout
+                  </h4>
+                  <p class="project__description--para">
+                    Shoppers should enjoy browsing while still trusting checkout. Catalog pages use deliberate <b>SSR/CSR splits</b> for speed, the cart uses <b>Zustand</b> for predictable state, <b>Stripe</b> handles payments, and <b>Zod</b> validates payloads before they reach the database. OAuth with Postgres and Drizzle keeps accounts and orders traceable for support and audits.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> A storefront you can walk a stakeholder through end to end—with polish that holds up in a demo or review.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://nike-ecom-store-phi.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/nike-ecom-store"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-1">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/Summarist.png"
+                  class="project__img"
+                  alt="Summarist Audiobook Platform"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Summarist</h3>
+                  <h4 class="project__description--sub-title">
+                    Audiobooks · subscriptions and entitlements done clearly
+                  </h4>
+                  <p class="project__description--para">
+                    Free and paid listeners need the same clarity about what they can hear. I integrated <b>Firebase auth</b> across Next’s server and client boundaries, used <b>Firestore</b> for realtime subscription state, connected <b>Stripe</b> for renewals and receipts, and built a custom <b>audio player</b> that respects entitlement before each chapter.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> Authentication, entitlements, billing, and playback stay aligned—no mismatched “premium” access and no unexplained playback stops.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://fes-internship-2-qztk.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/Summarist"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-2">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/awwwards.png"
+                  class="project__img"
+                  alt="Awwwards Design Showcase"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Awwwards</h3>
+                  <h4 class="project__description--sub-title">
+                    Motion &amp; 3D · performance-aware experimentation
+                  </h4>
+                  <p class="project__description--para">
+                    This <b>React + Vite + Three.js + GSAP</b> showcase pairs timeline-driven UI motion with WebGL depth while staying honest about <b>GPU and frame budgets</b>—so ambitious visuals can be tuned before they ship to customers on everyday laptops.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> Practical judgment on when to dial back effects so the experience still feels premium on common hardware.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://awwwards-lyart-alpha.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/awwwards"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-3">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/reactMovie.png"
+                  class="project__img"
+                  alt="React Movie App"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">React Movie</h3>
+                  <h4 class="project__description--sub-title">
+                    Movie night in a browser · search that feels instant
+                  </h4>
+                  <p class="project__description--para">
+                    Discovery should feel fast and forgiving. This <b>React + Vite</b> TMDB companion focuses on responsive search, detail pages with the right depth of metadata, and empty and offline states that explain what happened instead of leaving people stuck.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> A smooth browse-and-detail loop plus data-fetching patterns I reuse on production-facing apps.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://react-movie-weld-theta.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/react-movie"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <li class="project reveal reveal--delay-4">
+              <div class="project__wrapper">
+                <img
+                  src="./assets/nft.png"
+                  class="project__img"
+                  alt="Ultraverse NFT Marketplace"
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">Ultraverse</h3>
+                  <h4 class="project__description--sub-title">
+                    Digital collectibles · storefront focused on clarity
+                  </h4>
+                  <p class="project__description--para">
+                    Many NFT storefronts bury users in jargon. This <b>Figma-aligned</b> experience in <b>React, Next, TypeScript, Tailwind</b> emphasizes curated browsing, responsive search, intentional image loading, and plain-language feedback after each wallet action so customers always know what changed.
+                  </p>
+                  <p class="project__description--outcome">
+                    <b>Outcome:</b> A demo that shows how I would prioritize trust and explanation if blockchain-backed commerce were part of your roadmap.
+                  </p>
+                  <div class="project__description--links">
+                    <a
+                      href="https://trc-internship.vercel.app/"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a
+                      href="https://github.com/trcpoet/nft-marketplace-app-enhanced"
+                      target="_blank"
+                      class="project__description--link"
+                    >
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div id="data-work" class="projects__data-work">
+            <h2 class="projects__subsection-title reveal">Analytics &amp; data work</h2>
+            <ul class="projects__list projects__list--data">
+              <li class="project reveal reveal--delay-1">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/data-work-card.svg"
+                    class="project__img"
+                    alt=""
+                  />
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <h3 class="project__description--title">Retail &amp; Library SQL</h3>
+                    <h4 class="project__description--sub-title">
+                      Retail receipts &amp; library operations · analytical SQL
+                    </h4>
+                    <p class="project__description--para">
+                      Two domains: <b>retail</b> with 1,000+ transactions—margins, peak hours, and month-over-month trends using <b>CTEs and window functions</b>; and a <b>library</b> model where circulation, overdues, and branch metrics stay auditable. Same discipline—different business questions.
+                    </p>
+                    <p class="project__description--outcome">
+                      <b>Outcome:</b> Reusable SQL patterns I still apply when product schemas must stay accurate as requirements grow.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/trcpoet/sql_retail_sales_p1"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project__description--link"
+                        aria-label="SQL analytics projects on GitHub"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="project reveal reveal--delay-2">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/data-work-card.svg"
+                    class="project__img"
+                    alt=""
+                  />
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <h3 class="project__description--title">Data Professional Survey</h3>
+                    <h4 class="project__description--sub-title">
+                      630 voices, one dashboard · Power BI storytelling
+                    </h4>
+                    <p class="project__description--para">
+                      Survey responses need careful cleaning before they inform decisions. I used <b>Power Query</b> to normalize salary fields, handle nulls explicitly, and modeled a <b>star schema with DAX</b> so leaders could see compensation bands, satisfaction with pay, and tool adoption—including <b>Python at 67%</b> alongside meaningful use of R and SQL.
+                    </p>
+                    <p class="project__description--outcome">
+                      <b>Outcome:</b> Executive-ready reporting with visuals that welcome follow-up questions instead of hiding assumptions.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://www.linkedin.com/in/tahsinchowdhury-trc/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project__description--link"
+                        aria-label="See Power BI and analytics context on LinkedIn"
+                      >
+                        <i class="fa-brands fa-linkedin-in"></i>
+                      </a>
+                      <a
+                        href="https://github.com/trcpoet"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project__description--link"
+                        aria-label="GitHub profile"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="project reveal reveal--delay-3">
+                <div class="project__wrapper">
+                  <img
+                    src="./assets/data-work-card.svg"
+                    class="project__img"
+                    alt=""
+                  />
+                  <div class="project__wrapper--bg"></div>
+                  <div class="project__description">
+                    <h3 class="project__description--title">Data Science Web Apps</h3>
+                    <h4 class="project__description--sub-title">
+                      Interactive analytics · Streamlit prototypes
+                    </h4>
+                    <p class="project__description--para">
+                      When a question is easier to answer with a live tool than a deck, I reach for <b>Streamlit</b>: an <b>NBA stat explorer</b> fed by scraped game logs, a <b>DNA sequence visualizer</b> from FASTA inputs, exploratory views for markets and sports data, and <b>scikit-learn</b> classifiers with adjustable inputs—so partners can explore scenarios together instead of waiting on static exports.
+                    </p>
+                    <p class="project__description--outcome">
+                      <b>Outcome:</b> A repeatable path from “can we see this sliced differently?” to a shareable prototype before the conversation moves on.
+                    </p>
+                    <div class="project__description--links">
+                      <a
+                        href="https://github.com/trcpoet/Data-Science-Projects-Python"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project__description--link"
+                        aria-label="Data science projects on GitHub"
+                      >
+                        <i class="fa-brands fa-github"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <div class="logo">TRC</div>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/trcpoet" target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/tahsinchowdhury-trc/" target="_blank"
+              rel="noopener noreferrer"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="javascript:void(0)"
+              onclick="toggleModal();"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Contact
+            </a>
+            <a
+              href="./assets/Tahsin_CV_Master_v8.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              download=""
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+            >
+              Resume (Word)
+            </a>
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; 2026 Tahsin Rahman Chowdhury
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "fZork7537wneqtdF2",
+        });
+      })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

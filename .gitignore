@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+
+# Legacy live-server
+npm-debug.log*
+
+# Next.js app
+portfolio/node_modules/
+portfolio/.next/
+portfolio/out/
+portfolio/.vercel
+portfolio/*.tsbuildinfo
+
+# Env files
+.env
+.env.*
+!.env.example
