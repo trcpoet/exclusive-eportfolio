@@ -2,9 +2,11 @@
 
 ## Production app
 
-The **Next.js portfolio** in `portfolio/` is the production target. Deploy it to Vercel with **Root Directory = `portfolio`**.
+The **Next.js portfolio** in `portfolio/` is the production target on Vercel project **`exclusive-eportfolio`** with **Root Directory = `portfolio`**.
 
-See [portfolio/README.md](./portfolio/README.md) for step-by-step Vercel setup and CLI commands.
+Pushes to `main` on GitHub auto-deploy production. See [portfolio/README.md](./portfolio/README.md) for local dev and CLI fallback commands.
+
+**Production URL:** [exclusive-eportfolio-one.vercel.app](https://exclusive-eportfolio-one.vercel.app)
 
 ## Legacy site
 

@@ -27,14 +27,13 @@ Open [http://localhost:5174](http://localhost:5174).
 
 The Next.js app lives in the `portfolio/` subdirectory. Commit and push `portfolio/` to the `exclusive-eportfolio` repository on `main`.
 
-### 2. Import in Vercel
+### 2. Vercel (already configured)
 
-1. Go to [vercel.com/new](https://vercel.com/new) and import `trcpoet/exclusive-eportfolio`.
-2. Set **Root Directory** to `portfolio` (required — the repo root is the legacy static site).
-3. Framework Preset should auto-detect **Next.js**.
-4. Build command: `npm run build` (default)
-5. Output: managed by Vercel (default)
-6. Deploy.
+- **Project:** `exclusive-eportfolio` (linked to `trcpoet/exclusive-eportfolio`)
+- **Root Directory:** `portfolio`
+- **Production:** [exclusive-eportfolio-one.vercel.app](https://exclusive-eportfolio-one.vercel.app)
+
+Pushes to `main` trigger production deploys automatically.
 
 ### 3. CLI alternative
 
