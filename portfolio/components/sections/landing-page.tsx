@@ -20,10 +20,17 @@ export function LandingPage() {
       <section
         id="landing-page"
         onMouseMove={onMouseMove}
-        className="relative min-h-screen scroll-mt-[var(--nav-height)] overflow-hidden bg-[radial-gradient(ellipse_at_20%_50%,rgba(128,0,0,0.04)_0%,transparent_55%),radial-gradient(ellipse_at_80%_20%,rgba(128,0,0,0.03)_0%,transparent_45%)] pt-[var(--nav-height)] transition-[min-height,padding] duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] max-md:min-h-0 max-md:pb-12 dark:bg-bg-dark"
+        className="relative flex min-h-[calc(100svh-var(--nav-height))] scroll-mt-[var(--nav-height)] flex-col justify-center overflow-x-clip bg-[radial-gradient(ellipse_at_20%_50%,rgba(128,0,0,0.04)_0%,transparent_55%),radial-gradient(ellipse_at_80%_20%,rgba(128,0,0,0.03)_0%,transparent_45%)] pb-16 pt-[var(--nav-height)] dark:bg-bg-dark md:min-h-[calc(100dvh-var(--nav-height))] md:pb-20"
       >
-        <ParallaxShapes offsets={offsets} />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 overflow-hidden"
+        >
+          <ParallaxShapes offsets={offsets} />
+        </div>
+
         <HeroSection ready={ready} />
+
         <MailFab />
         <ScrollCue />
       </section>
