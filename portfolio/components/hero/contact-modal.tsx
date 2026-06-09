@@ -7,7 +7,9 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { unlockPageScroll } from "@/lib/unlock-page-scroll";
 import Image from "next/image";
+import { useEffect } from "react";
 
 type ContactModalProps = {
   open: boolean;
@@ -17,8 +19,31 @@ type ContactModalProps = {
 export function ContactModal({ open, onOpenChange }: ContactModalProps) {
   const paragraphs = modalAbout.body.split("\n\n");
 
+  useEffect(() => {
+    if (open) {
+      document.body.classList.add("modal-open");
+      return;
+    }
+
+    unlockPageScroll();
+  }, [open]);
+
+  function handleOpenChange(nextOpen: boolean) {
+    if (!nextOpen) {
+      unlockPageScroll();
+    }
+    onOpenChange(nextOpen);
+  }
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog
+      open={open}
+      onOpenChange={handleOpenChange}
+      onOpenChangeComplete={(nextOpen) => {
+        if (!nextOpen) unlockPageScroll();
+      }}
+      modal="trap-focus"
+    >
       <DialogContent
         showCloseButton
         className="h-[min(700px,92vh)] w-[min(1100px,92vw)] max-w-[min(1100px,92vw)] gap-0 overflow-hidden rounded-[20px] p-0 sm:max-w-[min(1100px,92vw)]"

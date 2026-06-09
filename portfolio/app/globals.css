@@ -324,6 +324,11 @@ html.reduced-motion #cursor-ring {
   display: none !important;
 }
 
+/* Contact modal — simple scroll lock (Base UI trap-focus skips its own lock) */
+body.modal-open {
+  overflow: hidden;
+}
+
 /* Landing hero glow */
 .hero-name-glow {
   text-shadow: 0 0 48px rgba(128, 0, 0, 0.15);
