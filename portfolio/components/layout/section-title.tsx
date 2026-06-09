@@ -14,7 +14,7 @@ export function SectionTitle({ eyebrow, children, className }: SectionTitleProps
         className
       )}
     >
-      <span className="mb-4 block font-sans text-[11px] font-semibold tracking-[0.25em] text-maroon uppercase">
+      <span className="section-eyebrow mb-4 block font-sans text-[11px] font-semibold tracking-[0.25em] text-maroon uppercase">
         {eyebrow}
       </span>
       {children}

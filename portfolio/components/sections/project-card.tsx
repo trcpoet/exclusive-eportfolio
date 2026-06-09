@@ -41,6 +41,7 @@ const linkIconMap = {
 
 function ProjectLinkButton({ link }: { link: ProjectLink }) {
   const Icon = linkIconMap[link.type];
+  const prominent = link.type === "github";
 
   return (
     <a
@@ -48,9 +49,16 @@ function ProjectLinkButton({ link }: { link: ProjectLink }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label={link.label}
-      className="inline-flex text-white transition-opacity hover:opacity-80"
+      title={link.label}
+      className={cn(
+        "project-link-icon group/link relative inline-flex text-white transition-[opacity,transform] hover:opacity-90",
+        prominent && "order-first scale-110"
+      )}
     >
       <Icon />
+      <span className="pointer-events-none absolute -top-8 left-1/2 -translate-x-1/2 rounded bg-black/85 px-2 py-0.5 text-[10px] font-medium tracking-wide whitespace-nowrap text-white opacity-0 transition-opacity group-hover/link:opacity-100 max-[480px]:hidden">
+        {link.label}
+      </span>
     </a>
   );
 }
@@ -85,12 +93,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
   }, [reducedMotion]);
 
   const overlayStrong = "font-semibold text-white/98";
+  const stackLabel = project.techTags.join(" · ");
 
   return (
     <div
       ref={wrapperRef}
       className={cn(
-        "group cursor-hover-target relative mx-auto w-full max-w-[900px] overflow-hidden rounded-2xl border border-border/80 shadow-[0_16px_48px_rgba(0,0,0,0.12)] dark:border-white/10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.35)]",
+        "group project-card cursor-hover-target relative mx-auto w-full max-w-[900px] overflow-hidden rounded-2xl border border-border/80 shadow-[0_16px_48px_rgba(0,0,0,0.12)] dark:border-white/10 dark:shadow-[0_16px_48px_rgba(0,0,0,0.35)]",
         !reducedMotion && "[@media(hover:hover)]:will-change-transform"
       )}
     >
@@ -99,33 +108,86 @@ export function ProjectCard({ project }: ProjectCardProps) {
         alt={project.imageAlt}
         width={900}
         height={506}
-        className="h-auto w-full transition-[transform,filter] duration-[450ms] ease-out group-hover:scale-[1.07] group-hover:blur-[5px]"
+        className="h-auto w-full transition-[transform,filter] duration-[450ms] ease-out group-hover:scale-[1.07] group-hover:blur-[5px] max-md:group-hover:scale-100 max-md:group-hover:blur-0"
       />
+
+      {/* Always-visible tech tags */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] bg-gradient-to-t from-[rgba(20,20,24,0.92)] via-[rgba(20,20,24,0.55)] to-transparent px-4 pt-10 pb-3.5">
+        <p className="mb-2 font-serif text-lg leading-tight text-white md:text-xl">
+          {project.title}
+        </p>
+        <p className="mb-2.5 text-[11px] font-semibold tracking-[0.12em] text-white/75 uppercase">
+          {project.subtitle}
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {project.techTags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border border-white/20 bg-white/10 px-2 py-0.5 text-[11px] font-medium text-white/95 backdrop-blur-sm"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Stack strip — desktop hover */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-[3] translate-y-full bg-maroon/95 px-4 py-2 text-center text-[11px] font-semibold tracking-[0.14em] text-white uppercase transition-transform duration-300 ease-out group-hover:translate-y-0 max-md:hidden"
+      >
+        {stackLabel}
+      </div>
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-br from-[rgba(60,0,0,0.96)] to-[rgba(28,29,37,0.96)] opacity-0 transition-opacity duration-[450ms] ease-out group-hover:opacity-90"
+        className="pointer-events-none absolute inset-0 z-[2] bg-gradient-to-br from-[rgba(60,0,0,0.96)] to-[rgba(28,29,37,0.96)] opacity-0 transition-opacity duration-[450ms] ease-out group-hover:opacity-90 max-md:opacity-0"
       />
 
-      <div className="pointer-events-none absolute top-1/2 left-1/2 z-[2] w-full max-w-[550px] -translate-x-1/2 -translate-y-1/2 px-4 text-center text-[#f4f4f8] opacity-0 transition-[opacity,transform] duration-[450ms] ease-out group-hover:opacity-100 max-[480px]:px-4">
-        <h3 className="font-serif text-[clamp(32px,6vw,44px)] leading-none font-normal tracking-[-0.5px] text-white">
+      <div className="pointer-events-none absolute top-1/2 left-1/2 z-[4] w-full max-w-[560px] -translate-x-1/2 -translate-y-1/2 px-4 text-center text-[#f4f4f8] opacity-0 transition-[opacity,transform] duration-[450ms] ease-out group-hover:pointer-events-auto group-hover:opacity-100 max-md:hidden">
+        <h3 className="pointer-events-none font-serif text-[clamp(32px,6vw,44px)] leading-none font-normal tracking-[-0.5px] text-white select-none">
           {project.title}
         </h3>
-        <p className="mt-2.5 text-xs font-semibold tracking-[0.15em] text-white/82 uppercase">
+        <p className="pointer-events-none mt-2.5 text-xs font-semibold tracking-[0.15em] text-white/82 uppercase select-none">
           {project.subtitle}
         </p>
-        <p className="mx-auto mt-4 max-w-[520px] text-base leading-[1.65] text-[rgba(244,244,248,0.95)] max-[480px]:hidden">
+        <p className="mx-auto mt-4 max-w-[520px] cursor-text text-base leading-[1.65] text-[rgba(244,244,248,0.95)] select-text">
           {renderRichText(project.description, { strongClassName: overlayStrong })}
         </p>
-        <p className="mx-auto mt-3 max-w-[520px] border-t border-white/18 pt-3 text-sm leading-[1.55] font-medium text-red-200/98 max-[480px]:hidden">
-          <strong className="font-bold tracking-[0.02em] text-white">Outcome:</strong>{" "}
+
+        <ul className="mx-auto mt-4 max-w-[520px] cursor-text space-y-1.5 text-left text-sm leading-[1.5] text-white/90 select-text">
+          {project.decisions.map((decision) => (
+            <li key={decision} className="flex gap-2">
+              <span className="mt-1.5 size-1 shrink-0 rounded-full bg-red-300/90" aria-hidden />
+              {decision}
+            </li>
+          ))}
+        </ul>
+
+        <p className="mx-auto mt-3 max-w-[520px] cursor-text border-t border-white/18 pt-3 text-sm leading-[1.55] font-medium text-red-200/98 select-text">
           {project.outcome}
         </p>
-        <div className="pointer-events-auto mt-4 flex justify-center gap-4">
+        <div className="mt-4 flex items-center justify-center gap-4">
           {project.links.map((link) => (
             <ProjectLinkButton key={`${link.type}-${link.href}`} link={link} />
           ))}
         </div>
+      </div>
+
+      {/* Mobile links — always reachable */}
+      <div className="pointer-events-auto absolute top-3 right-3 z-[5] flex gap-2 md:hidden">
+        {project.links.map((link) => (
+          <a
+            key={`${link.type}-${link.href}-mobile`}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+            className="flex size-9 items-center justify-center rounded-full bg-maroon/90 text-white shadow-md"
+          >
+            {link.type === "github" ? <GitHubIcon /> : link.type === "live" ? <ExternalLinkIcon /> : <LinkedInIcon />}
+          </a>
+        ))}
       </div>
     </div>
   );

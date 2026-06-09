@@ -60,11 +60,13 @@ export function SocialLinks({ visible, className }: SocialLinksProps) {
               rel={
                 link.href.startsWith("http") ? "noopener noreferrer" : undefined
               }
-              download={"download" in link && link.download ? true : undefined}
               aria-label={link.label}
-              className="cursor-hover-target flex size-8 items-center justify-center rounded-full bg-maroon text-sm text-white shadow-[0_6px_20px_rgba(128,0,0,0.2)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-[0_6px_20px_rgba(128,0,0,0.2)] active:scale-90"
+              title={link.label}
+              className="cursor-hover-target group/social flex size-8 items-center justify-center rounded-full bg-maroon text-sm text-white shadow-[0_6px_20px_rgba(128,0,0,0.2)] transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:scale-110 hover:shadow-[0_6px_20px_rgba(128,0,0,0.2)] active:scale-90"
             >
-              <Icon />
+              <span className="transition-transform duration-200 group-hover/social:rotate-12">
+                <Icon />
+              </span>
             </a>
           </MagneticWrap>
         );

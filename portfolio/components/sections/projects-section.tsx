@@ -40,20 +40,9 @@ export function ProjectsSection() {
         <RevealOnScroll>
           <SectionTitle eyebrow={projectsSection.eyebrow}>
             {titleParts[0]}
-            <span className="text-maroon">{projectsSection.titleAccent}</span>
+            <span className="section-accent text-maroon">{projectsSection.titleAccent}</span>
             {titleParts[1]}
           </SectionTitle>
-        </RevealOnScroll>
-
-        <RevealOnScroll delay={1}>
-          <p className="mx-auto -mt-9 mb-10 max-w-[760px] text-center text-[17px] leading-[1.7] text-foreground">
-            Each build is grounded in{" "}
-            <strong className="font-semibold">people who depend on the product</strong>
-            —clear maps and messaging, commerce flows that feel safe, media
-            experiences that respect access and billing, and analytics stakeholders
-            can question with confidence. Hover a card on desktop or open any link
-            to see the live app and repository.
-          </p>
         </RevealOnScroll>
 
         <RevealOnScroll>

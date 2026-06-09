@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroHeadshot } from "@/components/hero/hero-headshot";
+import { ResumeDownloads } from "@/components/hero/resume-downloads";
 import { SocialLinks } from "@/components/hero/social-links";
 import { hero } from "@/content/site";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -54,6 +55,9 @@ export function HeroSection({ ready }: HeroSectionProps) {
     >
       <header className="mx-auto grid w-full max-w-[1100px] grid-cols-1 items-center gap-8 px-4 py-6 sm:px-6 sm:py-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12 lg:px-8 xl:gap-14">
         <div className="order-2 min-w-0 lg:order-1">
+          <p className="mb-2 text-xs font-semibold tracking-[0.2em] text-maroon uppercase">
+            {hero.role} · {hero.roleTagline}
+          </p>
           <h1 className="font-serif text-[clamp(2.75rem,9vw,7.5rem)] leading-[0.95] tracking-[-0.04em] text-foreground">
             {reducedMotion && ready ? hero.greeting : greeting}
           </h1>
@@ -63,34 +67,33 @@ export function HeroSection({ ready }: HeroSectionProps) {
 
           <p
             className={cn(
-              "mt-3 max-w-[32rem] text-pretty text-[clamp(1rem,1.6vw,1.125rem)] leading-[1.85] tracking-wide text-foreground",
+              "mt-3 max-w-[32rem] text-pretty text-[clamp(1rem,1.6vw,1.125rem)] font-medium leading-snug text-foreground",
               showDetails && "animate-hero-rise",
               !showDetails && "opacity-0"
             )}
           >
-            I&apos;m a{" "}
-            <strong className="font-semibold text-maroon">Full Stack Engineer</strong>{" "}
-            and{" "}
-            <strong className="font-semibold text-maroon">Data Analyst</strong> who
-            cares about the people on the other side of the screen—whether they are
-            customers, teammates, or leaders reading a dashboard. Over{" "}
-            <strong>5+ years</strong> I have shipped <strong>five</strong> production
-            web products and <strong>three</strong> end-to-end data engagements, from
-            live maps and commerce to SaaS billing and survey-driven BI. I focus on
-            clear UX, dependable auth and data, steady releases, and communication
-            you can count on.{" "}
-            <strong className="text-maroon">{hero.availability}</strong>
-            <br />
-            Here&apos;s more{" "}
+            {hero.engineerLine}
+          </p>
+
+          <p
+            className={cn(
+              "mt-3 max-w-[32rem] text-pretty text-[clamp(0.95rem,1.4vw,1.05rem)] leading-[1.75] text-muted-foreground",
+              showDetails && "animate-hero-rise",
+              !showDetails && "opacity-0"
+            )}
+          >
+            {hero.intro}{" "}
+            <strong className="font-medium text-maroon">{hero.availability}</strong>{" "}
             <Link
               href="#about-me"
               className="font-semibold text-maroon underline-offset-4 hover:underline"
             >
-              about me.
+              About me →
             </Link>
           </p>
 
           <SocialLinks visible={showDetails} />
+          <ResumeDownloads visible={showDetails} />
         </div>
 
         <HeroHeadshot

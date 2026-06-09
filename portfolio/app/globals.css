@@ -308,6 +308,10 @@
   html:not(.reduced-motion) body {
     cursor: none;
   }
+
+  html:not(.reduced-motion) .select-text {
+    cursor: text;
+  }
 }
 
 html.reduced-motion body {
@@ -367,5 +371,55 @@ body.modal-open {
 @media (max-width: 900px) and (min-width: 769px) {
   :root {
     --nav-height: 84px;
+  }
+}
+
+/* Section reveal accents */
+.reveal-on-scroll[data-revealed] .section-eyebrow {
+  animation: eyebrow-settle 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-on-scroll[data-revealed] .section-accent {
+  animation: accent-glow-pulse 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+}
+
+@keyframes eyebrow-settle {
+  from {
+    letter-spacing: 0.35em;
+  }
+  to {
+    letter-spacing: 0.25em;
+  }
+}
+
+@keyframes accent-glow-pulse {
+  0% {
+    text-shadow: none;
+  }
+  40% {
+    text-shadow: 0 0 24px rgba(128, 0, 0, 0.45);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
+/* Project link icon hover */
+@media (hover: hover) {
+  .project-link-icon:hover svg {
+    transform: rotate(12deg);
+    transition: transform 200ms ease-out;
+  }
+}
+
+/* Marquee pause — respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-wrap:hover .animate-marquee {
+    animation-play-state: running !important;
+  }
+
+  .reveal-on-scroll[data-revealed] .section-eyebrow,
+  .reveal-on-scroll[data-revealed] .section-accent {
+    animation: none !important;
   }
 }

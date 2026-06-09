@@ -4,8 +4,11 @@ export function MarqueeStrip() {
   const items = [...marqueeItems, ...marqueeItems];
 
   return (
-    <div className="overflow-hidden bg-maroon py-4 whitespace-nowrap" aria-hidden>
-      <div className="inline-flex animate-marquee">
+    <div
+      className="marquee-wrap group overflow-hidden bg-maroon py-4 whitespace-nowrap"
+      aria-hidden
+    >
+      <div className="inline-flex animate-marquee group-hover:[animation-play-state:paused]">
         {items.map((item, index) => (
           <span
             key={`${item}-${index}`}

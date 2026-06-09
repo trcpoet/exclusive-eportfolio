@@ -10,6 +10,8 @@ export type Project = {
   subtitle: string;
   description: string;
   outcome: string;
+  techTags: string[];
+  decisions: string[];
   image: string;
   imageAlt: string;
   links: ProjectLink[];
@@ -18,127 +20,161 @@ export type Project = {
 
 export const projectsSection = {
   eyebrow: "Selected work",
-  title: "Projects I'm proud to stand behind",
-  titleAccent: "proud to stand behind",
-  lead: "Each build is grounded in people who depend on the product—clear maps and messaging, commerce flows that feel safe, media experiences that respect access and billing, and analytics stakeholders can question with confidence. Hover a card on desktop or open any link to see the live app and repository.",
-  webSubtitle: "Shipped web products",
-  dataSubtitle: "Analytics & data work",
+  title: "Projects I've shipped",
+  titleAccent: "I've shipped",
+  webSubtitle: "Apps people actually want to open",
+  dataSubtitle: "Data & ML side quests",
 } as const;
 
 export const webProjects: Project[] = [
   {
     id: "fun",
     title: "FUN",
-    subtitle: "Sports nights on a map · realtime coordination",
+    subtitle: "Pickup sports, anywhere · find your crew on the map",
+    techTags: ["React 19", "TypeScript", "Node", "Postgres", "Supabase", "Mapbox"],
+    decisions: [
+      "Web Worker clustering so 300+ player pins never freeze the map.",
+      "Realtime chat + row-level security so every group's data stays theirs.",
+    ],
     description:
-      "Organizers and players need a map that keeps up—venues visible, chat reliable, bookings without conflicts. I shipped a full stack on **React 19, TypeScript, Node/Express, Postgres, Supabase channels, Mapbox, Docker**, with **RLS** and OAuth so each group's data stays private. When **300+ pins** stressed the UI thread, I profiled in DevTools, moved heavy work to a **Web Worker**, and tuned loading so the experience stays smooth under real event load.",
+      "A social sports app for finding pickup games and players just like you—any sport, anywhere in the world. Drop a pin, start a chat, and meet people who want to run the same game you do. I built the map, messaging, and auth stack so it feels less like a spreadsheet and more like showing up at the park.",
     outcome:
-      "A responsive map at real crowd density, dependable messaging, and tenant isolation people can trust.",
+      "Players scroll a live world map past 300+ pins without lag—the heavy lifting stays off the main thread.",
     image: "/assets/fun-screenshot.png",
     imageAlt: "FUN Sports Map App",
     links: [
+      { href: "https://github.com/trcpoet/FUN", type: "github", label: "View repo" },
       { href: "https://fun-amber-mu.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/FUN", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "skinstric",
     title: "Skinstric AI",
-    subtitle: "Beauty meets biology · guided AI skincare flow",
+    subtitle: "Luxury skincare · AI that reads your skin",
+    techTags: ["Next.js", "TypeScript", "GSAP", "ML API"],
+    decisions: [
+      "GSAP motion that feels premium without wrecking layout on slower phones.",
+      "Every ML response gets loading, confidence, and error states—no mystery spinners.",
+    ],
     description:
-      "Users upload a photo and wait for analysis—they deserve clear status, honest uncertainty, and respectful errors. I matched detailed Figma specs in **React + Next + TypeScript**, used **GSAP** for motion that supports the flow without hurting layout, and wired async ML responses with explicit loading, confidence, and failure paths. Accessibility and keyboard support stayed in scope from the first screen.",
+      "Skinstric shows another side of AI and machine learning: luxury skincare. Snap a photo, get a thoughtful read on your skin, and move through a flow that feels like a high-end brand—not a lab experiment. I translated the Figma vision into Next.js with async ML, smooth motion, and accessibility baked in.",
     outcome:
-      "A production-ready flow users can complete—even when the network is uneven or the model is cautious.",
+      "Users finish the ritual on spotty Wi‑Fi because the app always tells them what's happening under the hood.",
     image: "/assets/skinstric.png",
     imageAlt: "Skinstric AI",
     links: [
+      { href: "https://github.com/trcpoet/Skinstric", type: "github", label: "View repo" },
       { href: "https://skinstric-orpin.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/Skinstric", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "nike",
     title: "Nike Clone",
-    subtitle: "E-commerce demo · fast catalog, trustworthy checkout",
+    subtitle: "Billion-dollar storefront · sizes, colors, live pricing",
+    techTags: ["Next.js", "Zustand", "Stripe", "Postgres", "Drizzle", "Zod"],
+    decisions: [
+      "SSR catalog for that instant Nike browse feel; client cart for snappy checkout.",
+      "Every color and size carries its own price and discount logic—not one flat tag.",
+    ],
     description:
-      "Shoppers should enjoy browsing while still trusting checkout. Catalog pages use deliberate **SSR/CSR splits** for speed, the cart uses **Zustand** for predictable state, **Stripe** handles payments, and **Zod** validates payloads before they reach the database. OAuth with Postgres and Drizzle keeps accounts and orders traceable for support and audits.",
+      "A full clone of Nike's billion-dollar shopping experience—browse iconic drops, pick your color and size, and watch prices and discounts update like the real thing. Stripe checkout, OAuth accounts, and validation that keeps bad orders out of the database.",
     outcome:
-      "A storefront you can walk a stakeholder through end to end—with polish that holds up in a demo or review.",
+      "Shoppers get real storefront energy—variant pricing, discounts, and checkout that doesn't break on bad input.",
     image: "/assets/NikeClone.png",
     imageAlt: "Nike E-Commerce Store",
     links: [
+      { href: "https://github.com/trcpoet/nike-ecom-store", type: "github", label: "View repo" },
       { href: "https://nike-ecom-store-phi.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/nike-ecom-store", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "summarist",
     title: "Summarist",
-    subtitle: "Audiobooks · subscriptions and entitlements done clearly",
+    subtitle: "Your favorite books, summarized · press play and go",
+    techTags: ["Next.js", "Firebase", "Firestore", "Stripe", "Audio API"],
+    decisions: [
+      "Stripe subscriptions and Firestore entitlements stay in sync—no free premium by accident.",
+      "Custom audio player checks access before every chapter loads.",
+    ],
     description:
-      "Free and paid listeners need the same clarity about what they can hear. I integrated **Firebase auth** across Next's server and client boundaries, used **Firestore** for realtime subscription state, connected **Stripe** for renewals and receipts, and built a custom **audio player** that respects entitlement before each chapter.",
+      "Too many books, not enough time? Summarist lets you listen to tight summaries of the titles you love—free chapters to start, subscriptions when you're hooked. I wired auth, billing, and a custom player so what you hear always matches what you paid for.",
     outcome:
-      "Authentication, entitlements, billing, and playback stay aligned—no mismatched \"premium\" access and no unexplained playback stops.",
+      "Listeners binge summaries without billing surprises—entitlements update the moment Stripe does.",
     image: "/assets/Summarist.png",
     imageAlt: "Summarist Audiobook Platform",
     links: [
+      { href: "https://github.com/trcpoet/Summarist", type: "github", label: "View repo" },
       { href: "https://fes-internship-2-qztk.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/Summarist", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "awwwards",
     title: "Awwwards",
-    subtitle: "Motion & 3D · performance-aware experimentation",
+    subtitle: "Motion playground · GSAP skills on full display",
+    techTags: ["React", "Vite", "Three.js", "GSAP"],
+    decisions: [
+      "UI timelines and WebGL scenes tuned separately—motion you can dial without breaking 3D.",
+      "Effects capped for everyday laptops so the flex doesn't melt your GPU.",
+    ],
     description:
-      "This **React + Vite + Three.js + GSAP** showcase pairs timeline-driven UI motion with WebGL depth while staying honest about **GPU and frame budgets**—so ambitious visuals can be tuned before they ship to customers on everyday laptops.",
+      "The brief was simple: flex the GSAP skills. Scroll-driven timelines, layered transitions, and Three.js accents that feel award-site worthy—built to show motion craft without turning your laptop into a space heater.",
     outcome:
-      "Practical judgment on when to dial back effects so the experience still feels premium on common hardware.",
+      "Silky scroll choreography on mid-range hardware because WebGL and GSAP each have a budget.",
     image: "/assets/awwwards.png",
     imageAlt: "Awwwards Design Showcase",
     links: [
+      { href: "https://github.com/trcpoet/awwwards", type: "github", label: "View repo" },
       { href: "https://awwwards-lyart-alpha.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/awwwards", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "react-movie",
     title: "React Movie",
-    subtitle: "Movie night in a browser · search that feels instant",
+    subtitle: "Movie night, sorted · search millions of titles instantly",
+    techTags: ["React", "Vite", "TMDB API", "React Query"],
+    decisions: [
+      "Debounced search + skeleton UI so typing never feels like shouting into the void.",
+      "Friendly empty and offline states—no blank screen of shame.",
+    ],
     description:
-      "Discovery should feel fast and forgiving. This **React + Vite** TMDB companion focuses on responsive search, detail pages with the right depth of metadata, and empty and offline states that explain what happened instead of leaving people stuck.",
+      "Your personal movie night concierge—search TMDB's catalog, filter fast, and land on something worth watching. Built for that \"what should we stream?\" moment with instant feedback even when the API is slow.",
     outcome:
-      "A smooth browse-and-detail loop plus data-fetching patterns I reuse on production-facing apps.",
+      "Search feels immediate because the UI answers before the network always does.",
     image: "/assets/reactMovie.png",
     imageAlt: "React Movie App",
     links: [
+      { href: "https://github.com/trcpoet/react-movie", type: "github", label: "View repo" },
       { href: "https://react-movie-weld-theta.vercel.app/", type: "live", label: "Live demo" },
-      { href: "https://github.com/trcpoet/react-movie", type: "github", label: "GitHub" },
     ],
     category: "web",
   },
   {
     id: "ultraverse",
     title: "Ultraverse",
-    subtitle: "Digital collectibles · storefront focused on clarity",
+    subtitle: "Collect the drop · NFT marketplace with personality",
+    techTags: ["Next.js", "TypeScript", "Tailwind", "Web3"],
+    decisions: [
+      "Figma-faithful layouts with image loading tuned for big catalogs.",
+      "Wallet toasts in plain English—users always know what just happened.",
+    ],
     description:
-      "Many NFT storefronts bury users in jargon. This **Figma-aligned** experience in **React, Next, TypeScript, Tailwind** emphasizes curated browsing, responsive search, intentional image loading, and plain-language feedback after each wallet action so customers always know what changed.",
+      "An NFT marketplace that doesn't talk like a whitepaper—browse curated drops, search collections, and connect your wallet with copy that actually makes sense. Built for collectors who care about the art, not just the hash.",
     outcome:
-      "A demo that shows how I would prioritize trust and explanation if blockchain-backed commerce were part of your roadmap.",
+      "First-time wallet users stick around because every action explains itself in human language.",
     image: "/assets/nft.png",
     imageAlt: "Ultraverse NFT Marketplace",
     links: [
-      { href: "https://trc-internship.vercel.app/", type: "live", label: "Live demo" },
       {
         href: "https://github.com/trcpoet/nft-marketplace-app-enhanced",
         type: "github",
-        label: "GitHub",
+        label: "View repo",
       },
+      { href: "https://trc-internship.vercel.app/", type: "live", label: "Live demo" },
     ],
     category: "web",
   },
@@ -148,18 +184,23 @@ export const dataProjects: Project[] = [
   {
     id: "sql",
     title: "Retail & Library SQL",
-    subtitle: "Retail receipts & library operations · analytical SQL",
+    subtitle: "Two worlds, one database · sales drama & library lore",
+    techTags: ["SQL", "PostgreSQL", "Analytics"],
+    decisions: [
+      "Retail: margins, rush hours, and month-over-month trends with window functions.",
+      "Library: circulation and overdue stories that auditors can actually follow.",
+    ],
     description:
-      "Two domains: **retail** with 1,000+ transactions—margins, peak hours, and month-over-month trends using **CTEs and window functions**; and a **library** model where circulation, overdues, and branch metrics stay auditable. Same discipline—different business questions.",
+      "What happens when a shoe store's best day and a library's overdue pile both need answers? I modeled 1,000+ retail transactions and a full library ops schema—CTEs and window functions that turn messy rows into narratives finance and ops teams can trust.",
     outcome:
-      "Reusable SQL patterns I still apply when product schemas must stay accurate as requirements grow.",
+      "One SQL playbook powers both margin reports and circulation dashboards as the data grows.",
     image: "/assets/data-work-card.svg",
     imageAlt: "SQL analytics projects",
     links: [
       {
         href: "https://github.com/trcpoet/sql_retail_sales_p1",
         type: "github",
-        label: "GitHub",
+        label: "View repo",
       },
     ],
     category: "data",
@@ -167,11 +208,16 @@ export const dataProjects: Project[] = [
   {
     id: "power-bi",
     title: "Data Professional Survey",
-    subtitle: "630 voices, one dashboard · Power BI storytelling",
+    subtitle: "630 data pros · salaries, tools, and the Python wave",
+    techTags: ["Power BI", "Power Query", "DAX", "Python"],
+    decisions: [
+      "Power Query tamed messy salary fields before a single chart went live.",
+      "Star schema so anyone can slice pay, satisfaction, and tool adoption on their own.",
+    ],
     description:
-      "Survey responses need careful cleaning before they inform decisions. I used **Power Query** to normalize salary fields, handle nulls explicitly, and modeled a **star schema with DAX** so leaders could see compensation bands, satisfaction with pay, and tool adoption—including **Python at 67%** alongside meaningful use of R and SQL.",
+      "Ever wonder what 630 data professionals actually earn and which tools they reach for? I cleaned the survey chaos in Power Query, built a star schema, and wired DAX so leaders can explore adoption—Python showing up at 67%—without waiting on another export.",
     outcome:
-      "Executive-ready reporting with visuals that welcome follow-up questions instead of hiding assumptions.",
+      "Execs go from \"what's the headline?\" to their own drill-down in two clicks.",
     image: "/assets/data-work-card.svg",
     imageAlt: "Power BI survey dashboard",
     links: [
@@ -180,25 +226,30 @@ export const dataProjects: Project[] = [
         type: "linkedin",
         label: "LinkedIn",
       },
-      { href: "https://github.com/trcpoet", type: "github", label: "GitHub" },
+      { href: "https://github.com/trcpoet", type: "github", label: "View repo" },
     ],
     category: "data",
   },
   {
     id: "streamlit",
     title: "Data Science Web Apps",
-    subtitle: "Interactive analytics · Streamlit prototypes",
+    subtitle: "NBA stats, DNA, ML · twist the knobs live in the browser",
+    techTags: ["Python", "Streamlit", "scikit-learn", "Pandas"],
+    decisions: [
+      "NBA explorer pulls scraped logs—filters update live, not static screenshots.",
+      "sklearn sliders let stakeholders stress-test models while you're still in the meeting.",
+    ],
     description:
-      "When a question is easier to answer with a live tool than a deck, I reach for **Streamlit**: an **NBA stat explorer** fed by scraped game logs, a **DNA sequence visualizer** from FASTA inputs, exploratory views for markets and sports data, and **scikit-learn** classifiers with adjustable inputs—so partners can explore scenarios together instead of waiting on static exports.",
+      "Data science shouldn't end in a slide deck. I built Streamlit apps for NBA game logs, genomics exploration, and sklearn classifiers—interactive toys where stakeholders twist filters and inputs in real time instead of asking for \"one more version.\"",
     outcome:
-      "A repeatable path from \"can we see this sliced differently?\" to a shareable prototype before the conversation moves on.",
+      "Meetings end with a shared prototype, not a follow-up email asking for another chart.",
     image: "/assets/data-work-card.svg",
     imageAlt: "Data science web apps",
     links: [
       {
         href: "https://github.com/trcpoet/Data-Science-Projects-Python",
         type: "github",
-        label: "GitHub",
+        label: "View repo",
       },
     ],
     category: "data",

@@ -9,34 +9,32 @@ export type ExperienceEntry = {
 
 export const experienceSection = {
   eyebrow: "The journey",
-  title: "Experience that supports delivery",
+  title: "Experience that ships",
   titleAccent: "Experience",
 } as const;
 
 export const experienceEntries: ExperienceEntry[] = [
   {
-    role: "Founder & Full Stack Engineer",
+    role: "Founder & Engineer",
     dates: "Jan 2024 – Present",
     company: "Self-Employed",
     location: "Arlington, TX",
     bullets: [
-      "I delivered **end-to-end web products** for real use cases: five shipped apps where I owned design handoff through database design, authentication, and dependable **Vercel** releases—four of them full design-to-code ownership so stakeholders saw one coherent story.",
-      "I integrated **payments, maps, realtime data, sign-in, and ML endpoints** so customers get a smooth front-of-house experience while support and engineering get clear errors, retries, and documented boundaries.",
-      "When FUN's map slowed under **300+ live pins**, I profiled in DevTools, moved heavy work into a **Web Worker**, and tuned loading so the UI stayed responsive under real crowd conditions.",
-      "I built a **serverless AWS foundation** (Lambda, API Gateway, DynamoDB, RDS, S3, CloudFront, least-privilege IAM, budget alarms) so capacity scales with demand without a dedicated ops footprint.",
-      "Security and QA aren't footnotes—**RLS, OAuth, JWT refresh, RBAC** show up everywhere, and **Jest, Testing Library, Zod, and honest PR review** keep regressions from becoming customer surprises.",
+      "Clients and my own products needed full-stack apps, not slide decks. I built **5 production web apps** on Vercel—auth, Postgres, payments, maps, and ML flows—and owned design through deploy on four of them. The work is live and clickable, not buried in a PDF.",
+      "FUN's map started choking with **300+ pins** on the main thread. I profiled renders and moved clustering into a **Web Worker** so organizers could keep chatting over a responsive map at crowd density.",
+      "One-off deploys were adding up, so I stood up an **AWS serverless** base—Lambda, API Gateway, DynamoDB, RDS, S3, CloudFront—with least-privilege IAM. New products extend the same template instead of reinventing infra.",
+      "Feature creep kept breaking auth and validation. I made **RLS, OAuth, JWT refresh, Zod, and Jest** the default before new scope lands, so reviews stay focused on product instead of footguns.",
     ],
   },
   {
     role: "Software Developer",
-    roleSub: "(Coursework)",
     dates: "Apr 2021 – May 2024",
     company: "University of Texas at Arlington",
     location: "Arlington, TX",
     bullets: [
-      "UTA is where I internalized the **full SDLC**—Agile cadence paired with shipped coursework in React, TypeScript, Java, SQL, and Python, with documentation written for the next person on the team.",
-      "Java coursework stressed **OOP, JDBC, concurrency with locks, and JUnit TDD**—layered applications held to both rubric requirements and a personal bar for clarity and maintainability.",
-      "I even spent quality time inside **SAP/ERP** simulations—procurement, inventory, materials—so I'd never treat \"business logic\" as someone else's problem.",
+      "Coursework had to mirror how teams actually ship. I built across **React, TypeScript, Java, SQL, and Python** with Agile sprints and readable handoffs—patterns I still reach for in production repos.",
+      "Enterprise Java demanded layered, testable code. **OOP, JDBC, concurrency, and JUnit TDD** on multi-tier apps taught me how to model business logic before the API surface gets wide.",
+      "ERP simulations came with strict procurement and inventory rules. **SAP/ERP** case work trained me to translate requirements and sign off data flows before writing code.",
     ],
   },
   {
@@ -45,8 +43,8 @@ export const experienceEntries: ExperienceEntry[] = [
     company: "University of Texas at Arlington",
     location: "Arlington, TX",
     bullets: [
-      "For two years I lived inside **UTA's institutional data**—cleaning, modelling, and visualising messy operational datasets until recurring reports stopped being a scavenger hunt for busy staff.",
-      "I learned the soft skill behind the hard numbers: **Power BI decks, crisp write-ups, and live presentations** that helped non-technical partners trust the trend lines.",
+      "Campus teams sat on messy institutional datasets. I cleaned, modeled, and documented **recurring reports** so partners could rerun them without pulling me back into every cycle.",
+      "Leaders needed insight, not raw exports. I built **Power BI** dashboards and walkthrough decks around their questions—shorter meetings and visuals they could slice on their own.",
     ],
   },
 ];

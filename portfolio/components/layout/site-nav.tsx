@@ -41,7 +41,7 @@ export function SiteNav() {
           }}
           className={cn(
             variant === "desktop" &&
-              "relative text-xs font-semibold uppercase tracking-[0.1em] text-foreground after:absolute after:bottom-[-3px] after:right-0 after:h-[3px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full max-[900px]:text-[11px] max-[900px]:tracking-[0.06em]",
+              "relative text-xs font-semibold uppercase tracking-[0.1em] text-foreground transition-[letter-spacing] duration-200 after:absolute after:bottom-[-3px] after:right-0 after:h-[3px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:tracking-[0.06em] hover:after:left-0 hover:after:w-full max-[900px]:text-[11px] max-[900px]:tracking-[0.06em] max-[900px]:hover:tracking-[0.04em]",
             className
           )}
         >
@@ -77,13 +77,25 @@ export function SiteNav() {
       <div className="mx-auto flex h-full w-full max-w-[1200px] items-center justify-between gap-3 px-5 md:px-10">
         <a
           href="#landing-page"
-          aria-label={`${siteMeta.name}, home`}
-          className={cn(
-            "flex size-14 shrink-0 items-center justify-center rounded-[10px] bg-gradient-to-br from-maroon to-maroon-dark text-2xl font-black tracking-tight text-white shadow-[0_4px_14px_rgba(128,0,0,0.25)] transition-[width,height,font-size,border-radius] duration-300 hover:scale-[1.03]",
-            compact && "size-12 rounded-lg text-xl"
-          )}
+          aria-label={`${siteMeta.name}, ${siteMeta.role} — home`}
+          className="group/logo flex shrink-0 items-center gap-2.5"
         >
-          {siteMeta.initials}
+          <span
+            className={cn(
+              "flex size-14 items-center justify-center rounded-[10px] bg-gradient-to-br from-maroon to-maroon-dark text-2xl font-black tracking-tight text-white shadow-[0_4px_14px_rgba(128,0,0,0.25)] transition-[width,height,font-size,border-radius,transform] duration-300 group-hover/logo:scale-[1.03]",
+              compact && "size-12 rounded-lg text-xl"
+            )}
+          >
+            {siteMeta.initials}
+          </span>
+          <span className="hidden min-w-0 flex-col lg:flex">
+            <span className="truncate text-sm font-semibold tracking-tight text-foreground">
+              {siteMeta.initials}
+            </span>
+            <span className="text-[10px] font-semibold tracking-[0.16em] text-maroon uppercase">
+              {siteMeta.roleTagline}
+            </span>
+          </span>
         </a>
 
         <nav

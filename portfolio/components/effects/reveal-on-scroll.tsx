@@ -54,7 +54,7 @@ export function RevealOnScroll({
   }, [reducedMotion]);
 
   const classes = cn(
-    "transform transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none",
+    "reveal-on-scroll transform transition-[opacity,transform] duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] motion-reduce:transform-none motion-reduce:opacity-100 motion-reduce:transition-none",
     revealed ? "translate-y-0 opacity-100" : "translate-y-9 opacity-0",
     delayClasses[delay],
     className
@@ -62,7 +62,11 @@ export function RevealOnScroll({
 
   if (Tag === "li") {
     return (
-      <li ref={ref as React.RefObject<HTMLLIElement>} className={classes}>
+      <li
+        ref={ref as React.RefObject<HTMLLIElement>}
+        className={classes}
+        data-revealed={revealed || undefined}
+      >
         {children}
       </li>
     );
@@ -70,14 +74,22 @@ export function RevealOnScroll({
 
   if (Tag === "article") {
     return (
-      <article ref={ref as React.RefObject<HTMLElement>} className={classes}>
+      <article
+        ref={ref as React.RefObject<HTMLElement>}
+        className={classes}
+        data-revealed={revealed || undefined}
+      >
         {children}
       </article>
     );
   }
 
   return (
-    <div ref={ref as React.RefObject<HTMLDivElement>} className={classes}>
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className={classes}
+      data-revealed={revealed || undefined}
+    >
       {children}
     </div>
   );

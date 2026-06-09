@@ -18,7 +18,7 @@ export function ExperienceSection() {
       <div className="mx-auto w-full max-w-[1100px] px-3">
         <RevealOnScroll>
           <SectionTitle eyebrow={experienceSection.eyebrow}>
-            <span className="text-maroon">{experienceSection.titleAccent}</span>
+            <span className="section-accent text-maroon">{experienceSection.titleAccent}</span>
             {titleParts[1]}
           </SectionTitle>
         </RevealOnScroll>
@@ -34,11 +34,11 @@ export function ExperienceSection() {
               key={`${entry.role}-${entry.dates}`}
               as="li"
               delay={getEntryDelay(index)}
-              className="relative list-none pb-9 pl-8 last:pb-0"
+              className="timeline-entry group relative list-none pb-9 pl-8 last:pb-0"
             >
               <div
                 aria-hidden
-                className="absolute top-1.5 -left-2.5 size-4 rounded-full border-[3px] border-maroon bg-card shadow-[0_0_0_4px_var(--background)] dark:shadow-[0_0_0_4px_var(--bg-dark)]"
+                className="timeline-dot absolute top-1.5 -left-2.5 size-4 rounded-full border-[3px] border-maroon bg-card shadow-[0_0_0_4px_var(--background)] transition-transform duration-200 group-hover:scale-125 dark:shadow-[0_0_0_4px_var(--bg-dark)]"
               />
 
               <div className="timeline__body">
@@ -51,7 +51,7 @@ export function ExperienceSection() {
                       </span>
                     ) : null}
                   </h3>
-                  <span className="text-[13px] font-semibold tracking-[0.08em] text-maroon uppercase">
+                  <span className="timeline-date rounded-full border border-transparent px-2 py-0.5 text-[13px] font-semibold tracking-[0.08em] text-maroon uppercase transition-colors duration-200 group-hover:border-maroon/30 group-hover:bg-maroon/8">
                     {entry.dates}
                   </span>
                 </div>

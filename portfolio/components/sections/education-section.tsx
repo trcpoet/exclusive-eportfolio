@@ -13,7 +13,7 @@ export function EducationSection() {
       <div className="mx-auto w-full max-w-[1100px] px-3">
         <RevealOnScroll>
           <SectionTitle eyebrow={educationSection.eyebrow}>
-            <span className="text-maroon">{educationSection.titleAccent}</span>
+            <span className="section-accent text-maroon">{educationSection.titleAccent}</span>
             {titleParts[1]}
           </SectionTitle>
         </RevealOnScroll>
@@ -34,6 +34,10 @@ export function EducationSection() {
                 {education.years}
               </span>
             </div>
+
+            <p className="text-[15px] leading-[1.7] text-foreground">
+              {education.narrative}
+            </p>
 
             <div className="mt-[18px]">
               <h4 className="mb-2.5 text-[11px] font-semibold tracking-[0.25em] text-maroon uppercase">

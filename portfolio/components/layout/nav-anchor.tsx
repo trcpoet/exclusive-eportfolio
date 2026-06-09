@@ -22,9 +22,9 @@ export function NavAnchor({
   const isHash = href.startsWith("#");
 
   const styles = cn(
-    "relative transition-colors",
+    "relative transition-[color,letter-spacing] duration-200",
     variant === "nav" &&
-      "text-xs font-semibold uppercase tracking-[0.1em] text-foreground after:absolute after:bottom-[-3px] after:right-0 after:h-[3px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full max-[900px]:text-[11px] max-[900px]:tracking-[0.06em]",
+      "text-xs font-semibold uppercase tracking-[0.1em] text-foreground after:absolute after:bottom-[-3px] after:right-0 after:h-[3px] after:w-0 after:bg-foreground after:transition-all after:duration-300 hover:tracking-[0.06em] hover:after:left-0 hover:after:w-full max-[900px]:text-[11px] max-[900px]:tracking-[0.06em] max-[900px]:hover:tracking-[0.04em]",
     variant === "footer" &&
       "text-sm text-white after:absolute after:bottom-[-3px] after:right-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:left-0 hover:after:w-full",
     className
@@ -37,7 +37,7 @@ export function NavAnchor({
         className={styles}
         target="_blank"
         rel="noopener noreferrer"
-        download={href.endsWith(".docx") ? true : undefined}
+        download={href.endsWith(".docx") || href.endsWith(".pdf") ? true : undefined}
       >
         {children}
       </a>
