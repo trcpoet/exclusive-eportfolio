@@ -62,7 +62,10 @@
   --maroon: #800000;
   --maroon-dark: #5c0000;
   --maroon-glow: rgba(128, 0, 0, 0.22);
-  --bg-light: #f4f4f5;
+  /* Lighter, glowing red used for text only */
+  --maroon-text: #a8242c;
+  --maroon-text-glow: rgba(168, 36, 44, 0.35);
+  --bg-light: #f7f7f9;
   --bg-dark: #1a1a1c;
   --text-muted: #5c5c66;
   --overlay-dark: #1c1d25;
@@ -82,9 +85,9 @@
   --popover-foreground: var(--bg-dark);
   --primary: var(--maroon);
   --primary-foreground: #ffffff;
-  --secondary: #ebebed;
+  --secondary: #f1f1f3;
   --secondary-foreground: var(--bg-dark);
-  --muted: #ebebed;
+  --muted: #f1f1f3;
   --muted-foreground: var(--text-muted);
   --accent: rgba(128, 0, 0, 0.08);
   --accent-foreground: var(--maroon-dark);
@@ -117,9 +120,9 @@
   --popover-foreground: #f4f4f5;
   --primary: #c44;
   --primary-foreground: #ffffff;
-  --secondary: #2a2a2e;
+  --secondary: #313136;
   --secondary-foreground: #f4f4f5;
-  --muted: #2a2a2e;
+  --muted: #313136;
   --muted-foreground: #a0a0a8;
   --accent: rgba(128, 0, 0, 0.25);
   --accent-foreground: #f4f4f5;
@@ -342,11 +345,31 @@ body.modal-open {
   text-shadow: 0 0 48px rgba(196, 68, 68, 0.2);
 }
 
+/* Red text — lighter color + soft glow (brand buttons/borders keep deep maroon) */
+.text-maroon {
+  color: var(--maroon-text);
+  text-shadow: 0 0 14px var(--maroon-text-glow);
+}
+
+.dark .text-maroon {
+  color: #ef6f6f;
+  text-shadow: 0 0 16px rgba(239, 111, 111, 0.4);
+}
+
+/* White text — bolder, clearer: slight thickening + drop shadow + glow */
+.text-white,
+[class*="text-white/"] {
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.55),
+    0 1px 3px rgba(0, 0, 0, 0.55),
+    0 0 16px rgba(255, 255, 255, 0.22);
+}
+
 /* Section cards — dark theme parity with legacy */
 .dark .stat-card,
 .dark .skill-card,
 .dark .education-card {
-  background: #2a2a2e;
+  background: #313136;
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
@@ -380,7 +403,7 @@ body.modal-open {
 }
 
 .reveal-on-scroll[data-revealed] .section-accent {
-  animation: accent-glow-pulse 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+  animation: accent-glow-pulse 900ms cubic-bezier(0.16, 1, 0.3, 1) 150ms;
 }
 
 @keyframes eyebrow-settle {
@@ -421,5 +444,64 @@ body.modal-open {
   .reveal-on-scroll[data-revealed] .section-eyebrow,
   .reveal-on-scroll[data-revealed] .section-accent {
     animation: none !important;
+  }
+}
+
+/* Contact modal — two halves slide in from opposite sides and meet */
+@media (prefers-reduced-motion: no-preference) {
+  [data-slot="dialog-content"] .contact-split {
+    will-change: transform;
+  }
+
+  [data-slot="dialog-content"][data-open] .contact-split--left {
+    animation: contact-split-in-left 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-slot="dialog-content"][data-open] .contact-split--right {
+    animation: contact-split-in-right 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  [data-slot="dialog-content"][data-closed] .contact-split--left {
+    animation: contact-split-out-left 240ms ease-in both;
+  }
+
+  [data-slot="dialog-content"][data-closed] .contact-split--right {
+    animation: contact-split-out-right 240ms ease-in both;
+  }
+}
+
+@keyframes contact-split-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes contact-split-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes contact-split-out-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes contact-split-out-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
   }
 }

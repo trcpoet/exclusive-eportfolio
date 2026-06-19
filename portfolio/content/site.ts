@@ -8,6 +8,7 @@ export const siteMeta = {
   roleTagline: "Full Stack Developer · Aspiring Data Scientist",
   location: "DFW",
   email: "tchowdhury29@gmail.com",
+  emailAlt: "tahsin.chowdhury@mavs.uta.edu",
 } as const;
 
 export const navLinks = [
@@ -19,17 +20,10 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ] as const;
 
-export const resumes = {
-  swe: {
-    label: "SWE resume",
-    fileName: "Tahsin_Chowdhury_SWE.pdf",
-    href: "/assets/trc_swe.pdf",
-  },
-  data: {
-    label: "Data resume",
-    fileName: "Tahsin_Chowdhury_Data.pdf",
-    href: "/assets/trc_data.pdf",
-  },
+export const resume = {
+  label: "Resume",
+  fileName: "Tahsin SWE Data 1Page.pdf",
+  href: "/assets/tahsin_swe_data_1page.pdf",
 } as const;
 
 export const socialLinks = [
@@ -49,7 +43,6 @@ export const footerLinks = [
   { label: "GitHub", href: "https://github.com/trcpoet" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/tahsinchowdhury-trc/" },
   { label: "Contact", href: "#contact" },
-  { label: "Classic site", href: "/classic" },
 ] as const;
 
 export const hero = {

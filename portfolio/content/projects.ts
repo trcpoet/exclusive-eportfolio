@@ -183,24 +183,29 @@ export const webProjects: Project[] = [
 export const dataProjects: Project[] = [
   {
     id: "sql",
-    title: "Retail & Library SQL",
-    subtitle: "Two worlds, one database · sales drama & library lore",
+    title: "SQL Projects",
+    subtitle: "Separate builds · library, retail, Amazon & more",
     techTags: ["SQL", "PostgreSQL", "Analytics"],
     decisions: [
-      "Retail: margins, rush hours, and month-over-month trends with window functions.",
-      "Library: circulation and overdue stories that auditors can actually follow.",
+      "Each domain is its own project—a library catalog, retail store sales, Amazon orders, and more—with a schema built for that data.",
+      "CTEs and window functions tuned per dataset: margins and sales trends for retail, circulation and overdue logic for the library.",
     ],
     description:
-      "What happens when a shoe store's best day and a library's overdue pile both need answers? I modeled 1,000+ retail transactions and a full library ops schema—CTEs and window functions that turn messy rows into narratives finance and ops teams can trust.",
+      "A growing collection of standalone SQL projects, each modeling a different world: a library catalog and circulation system, retail store sales, Amazon order data, and others. Per project I design the schema, load real-world-shaped data, and write CTEs and window functions that turn messy rows into answers finance and ops teams can trust.",
     outcome:
-      "One SQL playbook powers both margin reports and circulation dashboards as the data grows.",
+      "Each project stands on its own—reusable query patterns I carry from one dataset to the next.",
     image: "/assets/data-work-card.svg",
     imageAlt: "SQL analytics projects",
     links: [
       {
         href: "https://github.com/trcpoet/sql_retail_sales_p1",
         type: "github",
-        label: "View repo",
+        label: "Retail SQL repo",
+      },
+      {
+        href: "https://github.com/trcpoet",
+        type: "github",
+        label: "More on GitHub",
       },
     ],
     category: "data",

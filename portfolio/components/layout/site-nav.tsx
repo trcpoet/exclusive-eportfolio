@@ -89,9 +89,6 @@ export function SiteNav() {
             {siteMeta.initials}
           </span>
           <span className="hidden min-w-0 flex-col lg:flex">
-            <span className="truncate text-sm font-semibold tracking-tight text-foreground">
-              {siteMeta.initials}
-            </span>
             <span className="text-[10px] font-semibold tracking-[0.16em] text-maroon uppercase">
               {siteMeta.roleTagline}
             </span>

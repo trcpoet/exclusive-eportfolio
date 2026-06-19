@@ -43,12 +43,7 @@ export function Footer() {
         <p className="text-sm text-white/90">
           Copyright &copy; {year} {siteMeta.name}
         </p>
-        <p className="mt-2 text-xs text-white/55">
-          Built with Next.js 16 + GSAP ·{" "}
-          <NavAnchor href="/classic" variant="footer" className="text-white/70">
-            Classic site
-          </NavAnchor>
-        </p>
+        <p className="mt-2 text-xs text-white/55">Built with Next.js 16 + GSAP</p>
       </div>
     </footer>
   );

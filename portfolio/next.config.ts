@@ -16,15 +16,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/classic",
-        destination: "/classic/index.html",
-        permanent: false,
-      },
-    ];
-  },
 };
 
 export default nextConfig;

@@ -13,7 +13,7 @@ export const skillsSection = {
 
 export const skillCategories: SkillCategory[] = [
   {
-    title: "Languages",
+    title: "Languages, auth, cloud & quality",
     tags: [
       "TypeScript",
       "JavaScript",
@@ -21,6 +21,20 @@ export const skillCategories: SkillCategory[] = [
       "SQL",
       "Java",
       "HTML / CSS",
+      "OAuth",
+      "JWT",
+      "RLS",
+      "Stripe",
+      "Zod validation",
+      "Vercel",
+      "AWS Lambda",
+      "Docker",
+      "Git / GitHub",
+      "CI-friendly deploys",
+      "Jest",
+      "Testing Library",
+      "DevTools profiling",
+      "Code review",
     ],
   },
   {
@@ -46,24 +60,6 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    title: "Auth & payments",
-    tags: ["OAuth", "JWT", "RLS", "Stripe", "Zod validation"],
-  },
-  {
-    title: "Cloud & delivery",
-    tags: [
-      "Vercel",
-      "AWS Lambda",
-      "Docker",
-      "Git / GitHub",
-      "CI-friendly deploys",
-    ],
-  },
-  {
-    title: "Quality",
-    tags: ["Jest", "Testing Library", "DevTools profiling", "Code review"],
-  },
-  {
     title: "Data science & AI",
     tags: [
       "Power BI",
@@ -73,5 +69,9 @@ export const skillCategories: SkillCategory[] = [
       "ML APIs",
       "Power Query / DAX",
     ],
+  },
+  {
+    title: "Data analytics",
+    tags: ["Power BI", "Tableau", "Excel", "DAX", "SQL", "Data viz"],
   },
 ];

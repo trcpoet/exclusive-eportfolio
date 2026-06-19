@@ -43,6 +43,13 @@ export default function Home() {
                 className="font-medium text-maroon underline-offset-4 hover:underline"
               >
                 {siteMeta.email}
+              </a>{" "}
+              or{" "}
+              <a
+                href={`mailto:${siteMeta.emailAlt}`}
+                className="font-medium text-maroon underline-offset-4 hover:underline"
+              >
+                {siteMeta.emailAlt}
               </a>
               .
             </p>
