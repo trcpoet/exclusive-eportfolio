@@ -44,7 +44,7 @@ export const webProjects: Project[] = [
     imageAlt: "FUN Sports Map App",
     links: [
       { href: "https://github.com/trcpoet/FUN", type: "github", label: "View repo" },
-      { href: "https://fun-amber-mu.vercel.app/", type: "live", label: "Live demo" },
+      { href: "https://fun-trcpoet.vercel.app/", type: "live", label: "Live demo" },
     ],
     category: "web",
   },

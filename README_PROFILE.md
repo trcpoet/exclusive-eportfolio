@@ -24,7 +24,7 @@ I'm a **Full Stack Developer** passionate about building clean, functional appli
 Check out my work:
 - **[Skinstric](https://skinstric-orpin.vercel.app/)** — A skin care solution
 - **[Nike eCommerce](https://nike-ecom-store-phi.vercel.app/)** — Full featured e-commerce platform
-- **[FUN](https://fun-amber-mu.vercel.app/)** — Creative project
+- **[FUN](https://fun-trcpoet.vercel.app/)** — Creative project
 - See more in my **[Portfolio](https://exclusive-eportfolio-one.vercel.app/)**
 
 ## 🎮 Beyond Code
